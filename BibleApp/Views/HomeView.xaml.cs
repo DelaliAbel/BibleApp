@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace BibleApp.Views
 {
     /// <summary>
-    /// Logique d'interaction pour DashboardView.xaml
+    /// Logique d'interaction pour HomeView.xaml
     /// </summary>
-    public partial class DashboardView : UserControl
+    public partial class HomeView : UserControl
     {
-        public DashboardView()
+        public HomeView()
         {
             InitializeComponent();
         }

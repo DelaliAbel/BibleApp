@@ -29,9 +29,9 @@
         <!--#endregion-->
 
         <!--#region Top menu-->
-        <StackPanel Orientation="Horizontal" Background="White" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Height="60">
+        <!--<StackPanel Orientation="Horizontal" Background="White" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Height="60">
 
-        </StackPanel>
+        </StackPanel>-->
         <!--#endregion-->
 
         <!--#region menu lattéral gauche-->        

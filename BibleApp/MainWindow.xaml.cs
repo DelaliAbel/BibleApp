@@ -26,7 +26,7 @@ namespace BibleApp
         {
             InitializeComponent();
             this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
-            WorkPanel.Content = new BibleView();
+            //WorkPanel.Content = new BibleView();
             this.DataContext = new MainWindowViewModel();
         }
     }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BibleApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="650" Width="1000">
+        Title="Bible Pro" Height="650" Width="1000">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
@@ -14,20 +14,20 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="30"/>
             <RowDefinition Height="*"/>
             <RowDefinition />
             <RowDefinition Height="0.1*"/>
         </Grid.RowDefinitions>
 
         <!--#region Top Bar-->
-        <Grid Grid.ColumnSpan="4" Grid.Column="1" Background="#e8eaee"/>
+        <Grid Grid.ColumnSpan="4" Grid.Column="1" Background="White"/>
         <!--#endregion-->
-        
+
         <!--#region Menu Navigation-->
         <Grid Background="#e8eaee" Width="240" Grid.Row="0" Grid.RowSpan="4" HorizontalAlignment="Left">
+            <!--#region Animation du Witdh du grid -->
             <Grid.Style>
-                <!--#region Animation du Witdh du grid -->
                 <Style TargetType="Grid">
                     <Setter Property="Width" Value="275"/>
                     <Style.Triggers>
@@ -38,7 +38,7 @@
                                     <Storyboard>
                                         <DoubleAnimation 
                                                             Storyboard.TargetProperty="Width"
-                                                            To="60" SpeedRatio="2"/>
+                                                            To="75" SpeedRatio="2"/>
                                     </Storyboard>
                                 </BeginStoryboard>
                             </DataTrigger.EnterActions>
@@ -56,9 +56,8 @@
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
-
-                <!--#endregion-->
             </Grid.Style>
+            <!--#endregion-->
             <Grid.RowDefinitions>
                 <RowDefinition Height="130"/>
                 <!--<RowDefinition Height="40"/>-->
@@ -67,9 +66,12 @@
                 <RowDefinition Height="40"/>
                 <RowDefinition Height="40"/>
                 <RowDefinition Height="40"/>-->
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
                 <!--<RowDefinition Height="*"/>-->
             </Grid.RowDefinitions>
+
+            <Image Margin="20 15 10 0" Source="Resources/bible_logo.png" HorizontalAlignment="Left"/>
 
             <!-- Commentaire Les button du Menu
             
@@ -103,42 +105,40 @@
             
             -->
 
-            <StackPanel Grid.Row="1">
-            <ItemsControl  ItemsSource="{Binding MenuBarNavigation}">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Background="{x:Null}">
-                            <RadioButton Style="{StaticResource MenuRadioBtn}" 
-                                     Content="{Binding DisplayName}" 
-                                     Command="{Binding Command}" 
-                                     Tag="{Binding Icon}"
-                                     GroupName="Menu"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
-            
+            <StackPanel Grid.Row="1" Margin="0 40 0 0">
+                <ItemsControl  ItemsSource="{Binding MenuBarNavigation}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Background="{x:Null}">
+                                <RadioButton Style="{StaticResource MenuRadioBtn}" 
+                                         Content="{Binding DisplayName}" 
+                                         Command="{Binding Command}" 
+                                         ToolTip="{Binding DisplayName}"
+                                         Tag="{Binding Icon}"
+                                         IsChecked="{Binding IsChecked}"
+                                         GroupName="Menu"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
             </StackPanel>
+            <ToggleButton x:Name="ExpMenu"
+                              Height="45"
+                              Width="55"
+                              Grid.Row="2"
+                              Margin="10 0 10 10"
+                              Style="{StaticResource MenuTgBtn}"
+                              Tag="{StaticResource ExpandMenuIcon}"
+                              HorizontalAlignment="Left"/>
+
         </Grid>
+        
         <!--#endregion-->
 
         <!--#region les Bouton de fermerture-->
-        <!--<ItemsControl Grid.Column="13" HorizontalAlignment="Right" ItemsSource="{Binding WindowStateButton}">
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Background="{x:Null}">
-                        <RadioButton Style="{StaticResource IconBtn}" 
-                                     ToolTip="{Binding DisplayName}" 
-                                     Command="{Binding Command}" 
-                                     Tag="{Binding IconData}"
-                                     GroupName="WinStateBtn"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>-->
 
         <!--#region WorkPanel-->
-        <ContentControl x:Name="WorkPanel" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="1" Grid.RowSpan="3"/>
+        <ContentControl x:Name="WorkPanel" Content="{Binding WorkPanel}" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="1" Grid.RowSpan="3"/>
         <!--#endregion-->
     </Grid>
 </Window>

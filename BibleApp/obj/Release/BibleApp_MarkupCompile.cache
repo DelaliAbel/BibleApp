@@ -10,11 +10,11 @@ none
 false
 TRACE
 C:\Users\Aifit12\source\repos\BibleApp_Git\BibleApp\App.xaml
-9-10721220
+10-1142786480
 
-20-600877373
+22322043952
 13-1310406943
-MainWindow.xaml;Resources\Colors.xaml;Resources\StyleResources.xaml;Views\AudioView.xaml;Views\BibleView.xaml;Views\DashboardView.xaml;Views\GrecHebreuxView.xaml;Views\PlanView.xaml;Views\SettingView.xaml;
+MainWindow.xaml;Resources\Colors.xaml;Resources\Icons.xaml;Resources\StyleResources.xaml;Views\AudioView.xaml;Views\BibleView.xaml;Views\GrecHebreuxView.xaml;Views\HomeView.xaml;Views\PlanView.xaml;Views\SettingView.xaml;
 
 True
 

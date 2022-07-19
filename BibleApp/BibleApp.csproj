@@ -58,6 +58,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Command\RelayCommand.cs" />
+    <Compile Include="INotifyObject.cs" />
     <Compile Include="Lookup\IconData.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -72,6 +73,7 @@
     <Compile Include="ViewModel\BibleViewModel.cs" />
     <Compile Include="ViewModel\CommandViewModel.cs" />
     <Compile Include="ViewModel\DictGHViewModel.cs" />
+    <Compile Include="ViewModel\HomeViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="ViewModel\PlanViewModel.cs" />
     <Compile Include="Views\AudioView.xaml.cs">
@@ -80,11 +82,11 @@
     <Compile Include="Views\BibleView.xaml.cs">
       <DependentUpon>BibleView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\DashboardView.xaml.cs">
-      <DependentUpon>DashboardView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\GrecHebreuxView.xaml.cs">
       <DependentUpon>GrecHebreuxView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HomeView.xaml.cs">
+      <DependentUpon>HomeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PlanView.xaml.cs">
       <DependentUpon>PlanView.xaml</DependentUpon>
@@ -108,6 +110,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Resources\Icons.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\StyleResources.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -120,11 +126,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\DashboardView.xaml">
+    <Page Include="Views\GrecHebreuxView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\GrecHebreuxView.xaml">
+    <Page Include="Views\HomeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -173,6 +179,31 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\bible_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\img_2.jpg" />
+    <Resource Include="Images\img_12.jpg" />
+    <Resource Include="Images\img_13.jpg" />
+    <Resource Include="Images\img_14.jpg" />
+    <Resource Include="Images\img_15.jpg" />
+    <Resource Include="Images\img_16.jpg" />
+    <Resource Include="Images\img_17.jpg" />
+    <Resource Include="Images\img_18.jpg" />
+    <Resource Include="Images\img_19.jpg" />
+    <Resource Include="Images\img_20.jpg" />
+    <Resource Include="Images\img_11.jpg" />
+    <Resource Include="Images\img_10.jpg" />
+    <Resource Include="Images\img_9.jpg" />
+    <Resource Include="Images\img_8.jpg" />
+    <Resource Include="Images\img_7.jpg" />
+    <Resource Include="Images\img_6.jpg" />
+    <Resource Include="Images\img_5.jpg" />
+    <Resource Include="Images\img_4.jpg" />
+    <Resource Include="Images\img_3.jpg" />
+    <Resource Include="Images\img_1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

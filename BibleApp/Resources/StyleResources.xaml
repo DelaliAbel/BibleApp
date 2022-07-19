@@ -12,26 +12,32 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="RadioButton">
-                    <Border Name="Bd" CornerRadius="15"
-                            Margin="2 0 0 0"
+                    <Border Name="Bd" CornerRadius="0"
+                            Margin="10 0 10 0"
                             Background="Transparent"
                             BorderBrush="#0202f8">
                         <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition/>
-                            </Grid.ColumnDefinitions>
-                            <Path Height="18" Name="Pt" Data="{Binding Tag, RelativeSource={RelativeSource AncestorType=RadioButton}}" 
+                            <!-- Indicator -->
+                            <Rectangle Name="Indicator" HorizontalAlignment="Left" 
+                                       Width="3" Height="40" Margin="3 10 0 10"
+                                       VerticalAlignment="Center" Fill="Transparent"/>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Path Height="18" Name="Pt" Data="{Binding Tag, RelativeSource={RelativeSource AncestorType=RadioButton}}" 
                                   Width="18"
                                   Stretch="Uniform" 
                                   Fill="#a0a9b2"
-                                  Margin="20 0 15 0"
+                                  Margin="18 0 10 0"
                                   HorizontalAlignment="Left"/>
-                            <ContentPresenter Grid.Column="1" 
+                                <ContentPresenter Grid.Column="1" 
                                               Content="{TemplateBinding Content}" 
                                               VerticalAlignment="Center" 
                                               HorizontalAlignment="Left"
                                               Margin="0 0 20 0"/>
+                            </Grid>
                         </Grid>
                     </Border>
                     <ControlTemplate.Triggers>
@@ -39,15 +45,16 @@
                             <Setter TargetName="Bd" Property="Background" Value="WhiteSmoke"/>
                             <Setter TargetName="Pt" Property="Fill" Value="#055efd"/>
                             <Setter Property="Foreground" Value="Black"/>
-                            <Setter TargetName="Bd" Property="BorderThickness" Value="3 0 0 0"/>
-                            <Setter TargetName="Pt" Property="Margin" Value="17 0 15 0"/>
+                            <Setter TargetName="Indicator" Property="Fill" Value="#055efd"/>
+                            <Setter TargetName="Indicator" Property="Height" Value="40"/>
+                            <!--<Setter TargetName="Bd" Property="BorderThickness" Value="3 0 0 0"/>-->
+                            <!--<Setter TargetName="Pt" Property="Margin" Value="17 0 15 0"/>-->
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter TargetName="Bd" Property="Background" Value="WhiteSmoke"/>
                             <Setter Property="Foreground" Value="Black"/>
                             <Setter TargetName="Pt" Property="Fill" Value="#055efd"/>
-                            <Setter TargetName="Bd" Property="BorderThickness" Value="3 0 0 0"/>
-                            <Setter TargetName="Pt" Property="Margin" Value="17 0 15 0"/>
+                            <!--<Setter TargetName="Pt" Property="Margin" Value="19 0 15 0"/>-->
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -212,25 +219,41 @@
     </Style>
 
     <!--#endregion-->
-    
-    <!--#region Tag Button Style-->
-    <Style TargetType="ToggleButton" x:Key="MenuTgBtn">
+
+    <!--#region MenuTgBtn-->
+    <Style x:Key="MenuTgBtn" TargetType="ToggleButton" >
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate>
-                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0">
-                        <Path Fill="{StaticResource MaronMedium2}" 
+                <ControlTemplate TargetType="ToggleButton">
+                    <StackPanel Name="stack" 
+                                Background="{TemplateBinding Background}"
+                                VerticalAlignment="Center">
+                        <Path Fill="#a0a9b2"
+                              Name="Pt"
                               Data="{Binding Tag, RelativeSource={RelativeSource AncestorType=ToggleButton}}"
-                              Stretch="Uniform" Margin="5"/>
-                    </Border>
+                              Stretch="Uniform" 
+                              Height="18"
+                              Width="18"
+                              Margin="15"/>
+                    </StackPanel>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="stack" Property="Background" Value="white"/>
+                            <Setter TargetName="stack" Property="Cursor" Value="Hand"/>
+                            <Setter TargetName="Pt" Property="Fill" Value="#055efd"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="stack" Property="FlowDirection" Value="RightToLeft"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
     <!--#endregion-->
     
-    <!--#region RadioButton des livres-->
+    <!--#region RadioButton-->
     <Style TargetType="RadioButton" x:Key="LivresRadioBtn">
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="GroupName"  Value="LRdBtn"/>
@@ -523,4 +546,28 @@
     </Style>
     <!--#endregion-->
     
+    <!--#region Shadow-->
+    <DropShadowEffect x:Key="shadow" ShadowDepth="10"
+                                      Direction="310"
+                                      Color="gray"
+                                      Opacity="0.3"
+                                      BlurRadius="15"/>
+    <!--#endregion-->
+    <!--#region Shadow-->
+    <DropShadowEffect x:Key="shadowleft" ShadowDepth="2"
+                                      Direction="210"
+                                      Color="LightGray"
+                                      Opacity="0.3"
+                                      BlurRadius="30"/>
+    <!--#endregion-->
+    
+    <!--#region Border style-->
+    <Style x:Key="BorderStyle" TargetType="Border">
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Effect" Value="{StaticResource shadow}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <!--#endregion-->
 </ResourceDictionary>
