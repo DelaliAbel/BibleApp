@@ -1,0 +1,144 @@
+﻿<Window x:Class="BibleApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BibleApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="650" Width="1000">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition />
+            <RowDefinition Height="0.1*"/>
+        </Grid.RowDefinitions>
+
+        <!--#region Top Bar-->
+        <Grid Grid.ColumnSpan="4" Grid.Column="1" Background="#e8eaee"/>
+        <!--#endregion-->
+        
+        <!--#region Menu Navigation-->
+        <Grid Background="#e8eaee" Width="240" Grid.Row="0" Grid.RowSpan="4" HorizontalAlignment="Left">
+            <Grid.Style>
+                <!--#region Animation du Witdh du grid -->
+                <Style TargetType="Grid">
+                    <Setter Property="Width" Value="275"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Path=IsChecked, ElementName=ExpMenu}" Value="False">
+
+                            <DataTrigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation 
+                                                            Storyboard.TargetProperty="Width"
+                                                            To="60" SpeedRatio="2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </DataTrigger.EnterActions>
+
+                            <DataTrigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation 
+                                                            Storyboard.TargetProperty="Width"
+                                                            To="240"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </DataTrigger.ExitActions>
+
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+
+                <!--#endregion-->
+            </Grid.Style>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="130"/>
+                <!--<RowDefinition Height="40"/>-->
+                <!--<RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>-->
+                <RowDefinition Height="Auto"/>
+                <!--<RowDefinition Height="*"/>-->
+            </Grid.RowDefinitions>
+
+            <!-- Commentaire Les button du Menu
+            
+            
+                <RadioButton Grid.Row="1" 
+                         Style="{StaticResource MenuRadioBtn}" 
+                         Content="Lire la Bible"
+                         ToolTip ="Lire la Bible"
+                         Tag="{StaticResource SymbolIcon}"/>
+            <RadioButton Grid.Row="2" 
+                         Style="{StaticResource MenuRadioBtn}" 
+                         Content="Ecouter la Bible"
+                         Tag="{StaticResource AudioIcon}"/>
+            <RadioButton Grid.Row="3" 
+                         Style="{StaticResource MenuRadioBtn}" 
+                         Content="Strong Grec et Hébreu"
+                         Tag="{StaticResource BookIcon}"/>
+            <RadioButton Grid.Row="4" 
+                         Style="{StaticResource MenuRadioBtn}" 
+                         Content="Plan de lecture"
+                         Tag="{StaticResource AgendaIcon}"/>
+            <RadioButton Grid.Row="5" 
+                         Style="{StaticResource MenuRadioBtn}" 
+                         Content="Verset du jour"
+                         Tag="{StaticResource NotifIcon}"/>
+            <RadioButton Grid.Row="6" 
+                         Style="{StaticResource MenuRadioBtn}" 
+                         Content="Parametre"
+                         Tag="{StaticResource SettingIcon}"/>
+            
+            
+            -->
+
+            <StackPanel Grid.Row="1">
+            <ItemsControl  ItemsSource="{Binding MenuBarNavigation}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Background="{x:Null}">
+                            <RadioButton Style="{StaticResource MenuRadioBtn}" 
+                                     Content="{Binding DisplayName}" 
+                                     Command="{Binding Command}" 
+                                     Tag="{Binding Icon}"
+                                     GroupName="Menu"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+            
+            </StackPanel>
+        </Grid>
+        <!--#endregion-->
+
+        <!--#region les Bouton de fermerture-->
+        <!--<ItemsControl Grid.Column="13" HorizontalAlignment="Right" ItemsSource="{Binding WindowStateButton}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Background="{x:Null}">
+                        <RadioButton Style="{StaticResource IconBtn}" 
+                                     ToolTip="{Binding DisplayName}" 
+                                     Command="{Binding Command}" 
+                                     Tag="{Binding IconData}"
+                                     GroupName="WinStateBtn"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>-->
+
+        <!--#region WorkPanel-->
+        <ContentControl x:Name="WorkPanel" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="1" Grid.RowSpan="3"/>
+        <!--#endregion-->
+    </Grid>
+</Window>
