@@ -24,6 +24,7 @@ namespace BibleApp.ViewModel
         private GrecHebreuxView _grecHebreuxView = new GrecHebreuxView();
         private AudioView _audioView = new AudioView();
         private SettingView _settingView = new SettingView();
+        private string _windowState;
         #endregion
 
         #region Properties
@@ -97,6 +98,50 @@ namespace BibleApp.ViewModel
                 OnPropertyChanged("WorkPanel");
             }
         }
+        public ObservableCollection<CommandViewModel> WindowStateButtons
+        {
+            get {
+                if (_windowStateButton == null)
+                {
+                    _windowStateButton = new ObservableCollection<CommandViewModel>()
+                    {
+                        //Minimize
+                        new CommandViewModel
+                        {
+                            DisplayName = "Minimize",
+                            Icon = IconData.DashboardIcon,
+                            Command = new RelayCommand(param => WindowStateAction("Minimize")),
+                            IsChecked = true
+                        },
+                        //Maximize
+                        new CommandViewModel
+                        {
+                            DisplayName = "Maximize",
+                            Icon = IconData.SymbolIcon,
+                            Command = new RelayCommand(param => WindowStateAction("Maximize")),
+                            IsChecked = false
+                        },
+                        //Close
+                        new CommandViewModel
+                        {
+                            DisplayName = "Close",
+                            Icon = IconData.AudioIcon,
+                            Command = new RelayCommand(param => WindowStateAction("Close")),
+                            IsChecked = false
+                        },
+                    };
+                }
+                return _windowStateButton; 
+            }
+            set { _windowStateButton = value;}
+        }
+        public string WindowState
+        {
+            get { return _windowState; }
+            set { _windowState = value;
+                OnPropertyChanged("WindowState");
+            }
+        }
         #endregion
 
         #region Construtor
@@ -130,6 +175,11 @@ namespace BibleApp.ViewModel
                     WorkPanel = _settingView;
                     break;
             }
+        }
+
+        private void WindowStateAction(string i_state)
+        {
+            WindowState = i_state;
         }
         #endregion
     }

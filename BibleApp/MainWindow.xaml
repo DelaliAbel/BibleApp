@@ -5,7 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BibleApp"
         mc:Ignorable="d"
-        Title="Bible Pro" Height="650" Width="1000">
+        Title="Bible Pro" Height="650" Width="1000"
+        WindowState="Normal"
+        WindowStartupLocation="CenterScreen"
+        MouseDown="Window_MouseDown"
+        WindowStyle="None"
+        Name="home">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
@@ -21,7 +26,56 @@
         </Grid.RowDefinitions>
 
         <!--#region Top Bar-->
-        <Grid Grid.ColumnSpan="4" Grid.Column="1" Background="White"/>
+        <Grid Grid.ColumnSpan="4" Grid.Column="1" Background="#e8eaee">
+            <!--#region WindowStateButtons-->
+            <StackPanel HorizontalAlignment="Right"
+                        Orientation="Horizontal"
+                        Grid.Column="3"
+                        FlowDirection="RightToLeft">
+
+                <Button Style="{StaticResource WindowButtonStyle}"
+                    Name="CloseButton"
+                    Click="CloseButton_Click"
+                    Tag="IsCloseButton"
+                    Content="{StaticResource close_ico}"/>
+
+                <Button x:Name="RestoreButton"
+                    Click="RestoreButton_Click">
+                    <Button.Style>
+                        <Style TargetType="Button"
+                           BasedOn="{StaticResource WindowButtonStyle}">
+                            <Setter Property="Content" Value="{StaticResource restore_ico}"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ElementName=home, Path=WindowState}" Value="Maximazed">
+                                    <Setter Property="Content" Value="{StaticResource restore_ico}"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+
+                <Button x:Name="MinimizeButton"
+                    Style="{StaticResource WindowButtonStyle}"
+                    Content="{StaticResource minimize_ico}"
+                    Click="MinimizeButton_Click"/>
+
+            </StackPanel>
+            <!--#endregion-->
+
+            <!--<ItemsControl Grid.Column="3" Background="Green" ItemsSource="{Binding WindowStateButtons}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Background="{x:Null}">
+                        <RadioButton Style="{StaticResource WindowStateBtn}"
+                                     Command="{Binding Command}" 
+                                     ToolTip="{Binding DisplayName}"
+                                     Tag="{Binding Icon}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>-->
+
+        </Grid>
         <!--#endregion-->
 
         <!--#region Menu Navigation-->
@@ -60,51 +114,12 @@
             <!--#endregion-->
             <Grid.RowDefinitions>
                 <RowDefinition Height="130"/>
-                <!--<RowDefinition Height="40"/>-->
-                <!--<RowDefinition Height="40"/>
-                <RowDefinition Height="40"/>
-                <RowDefinition Height="40"/>
-                <RowDefinition Height="40"/>
-                <RowDefinition Height="40"/>-->
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
-                <!--<RowDefinition Height="*"/>-->
             </Grid.RowDefinitions>
 
             <Image Margin="20 15 10 0" Source="Resources/bible_logo.png" HorizontalAlignment="Left"/>
-
-            <!-- Commentaire Les button du Menu
             
-            
-                <RadioButton Grid.Row="1" 
-                         Style="{StaticResource MenuRadioBtn}" 
-                         Content="Lire la Bible"
-                         ToolTip ="Lire la Bible"
-                         Tag="{StaticResource SymbolIcon}"/>
-            <RadioButton Grid.Row="2" 
-                         Style="{StaticResource MenuRadioBtn}" 
-                         Content="Ecouter la Bible"
-                         Tag="{StaticResource AudioIcon}"/>
-            <RadioButton Grid.Row="3" 
-                         Style="{StaticResource MenuRadioBtn}" 
-                         Content="Strong Grec et Hébreu"
-                         Tag="{StaticResource BookIcon}"/>
-            <RadioButton Grid.Row="4" 
-                         Style="{StaticResource MenuRadioBtn}" 
-                         Content="Plan de lecture"
-                         Tag="{StaticResource AgendaIcon}"/>
-            <RadioButton Grid.Row="5" 
-                         Style="{StaticResource MenuRadioBtn}" 
-                         Content="Verset du jour"
-                         Tag="{StaticResource NotifIcon}"/>
-            <RadioButton Grid.Row="6" 
-                         Style="{StaticResource MenuRadioBtn}" 
-                         Content="Parametre"
-                         Tag="{StaticResource SettingIcon}"/>
-            
-            
-            -->
-
             <StackPanel Grid.Row="1" Margin="0 40 0 0">
                 <ItemsControl  ItemsSource="{Binding MenuBarNavigation}">
                     <ItemsControl.ItemTemplate>
@@ -134,9 +149,7 @@
         </Grid>
         
         <!--#endregion-->
-
-        <!--#region les Bouton de fermerture-->
-
+                
         <!--#region WorkPanel-->
         <ContentControl x:Name="WorkPanel" Content="{Binding WorkPanel}" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="1" Grid.RowSpan="3"/>
         <!--#endregion-->

@@ -23,7 +23,7 @@
         </Grid.RowDefinitions>
 
         <!--#region GridSplitter-->
-        <GridSplitter Grid.Column="1" Grid.Row="0" Grid.RowSpan="5" Width="4" HorizontalAlignment="Stretch" />
+        <Rectangle Grid.Column="1" Grid.Row="0" Grid.RowSpan="5" Width="1" Fill="LightGray" HorizontalAlignment="Stretch" />
         <GridSplitter Grid.Column="3" Grid.Row="2" Grid.RowSpan="2" Width="4" HorizontalAlignment="Stretch" />
         <GridSplitter Grid.Row="3" Grid.ColumnSpan="5" Height="4" HorizontalAlignment="Stretch" />
         <!--#endregion-->
@@ -36,7 +36,7 @@
 
         <!--#region menu lattéral gauche-->        
         <StackPanel Grid.RowSpan="5" Grid.Row="2" Background="#FAF5F5F5">
-            <RadioButton Content="Ancien Testament" Height="30" Style="{StaticResource LivresRadioBtn}"/>
+            <RadioButton Content="Ancien Testament" IsChecked="True" Height="30" Style="{StaticResource LivresRadioBtn}"/>
             <RadioButton Content="Nouveau Testament" Height="30" Style="{StaticResource LivresRadioBtn}"/>
             <Separator Height="1" Background="DodgerBlue"/>
             <StackPanel >
@@ -56,7 +56,7 @@
                     <StackPanel Margin="30 10" HorizontalAlignment="Right" VerticalAlignment="Top" Height="Auto">
                         <Button Content="Ecouter" Width="60"/>
                     </StackPanel>
-                    <FlowDocumentReader IsScrollViewEnabled="True" IsTwoPageViewEnabled="False">
+                    <FlowDocumentReader IsScrollViewEnabled="True" ViewingMode="Scroll" IsTwoPageViewEnabled="False">
                         <FlowDocument>
                             <Paragraph FontSize="36" Foreground="Gray" Margin="0">Genèse</Paragraph>
                             <Paragraph FontStyle="Italic" TextAlignment="Left" FontSize="14" Foreground="Gray">Here's a list of our users, inside our FlowDocument, in a completely interactive ListView control!</Paragraph>

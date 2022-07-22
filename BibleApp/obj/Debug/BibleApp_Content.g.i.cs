@@ -8,25 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/155b0932587339.568badd33db8e.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/15b69b32587339.568badd332c51.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/18b77332587339.568badd339625.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/1ad35132587339.568badd33ff22.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/31318932587339.568badd33ee6d.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/31df8b32587339.568badd32e5a0.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/3d85e132587339.568badd32f820.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/3f8a1c19b7732b6738f6a52baf341f92.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/4653b032587339.568badd32b684.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/59ec3f32587339.568badd338414.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/74ca6a32587339.568badd33a69e.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/7b4fd032587339.568badd3350c3.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/996c4b32587339.568badd333d5c.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/ac887632587339.568badd32d12a.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/b0f46132587339.568badd331b7d.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/c5a46832587339.568badd33c88e.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/d8aaa732587339.568badd33b6ee.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/emkm9qmvuaaddee.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/fb54d532587339.568badd336217.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/screenshot-2020-11-27-at-08.00.28.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/setting.jpg")]
 
 
