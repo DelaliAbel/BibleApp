@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\BibleApp"
+    "\\BibleApp",
+    "\\BibleApp\\Views"
   ],
-  "SelectedNode": "\\BibleApp\\MainWindow.xaml",
+  "SelectedNode": "\\BibleApp\\Views\\BibleView.xaml",
   "PreviewInSolutionExplorer": false
 }

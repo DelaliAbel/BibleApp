@@ -55,6 +55,7 @@
             </GradientStopCollection>
         </GradientBrush.GradientStops>
     </LinearGradientBrush>
+    
     <LinearGradientBrush x:Key="PressedBrush" StartPoint="0,0" EndPoint="0,1">
         <GradientBrush.GradientStops>
             <GradientStopCollection>
@@ -65,5 +66,48 @@
             </GradientStopCollection>
         </GradientBrush.GradientStops>
     </LinearGradientBrush>
-
+    
+    <LinearGradientBrush x:Key="PagePath1Color" StartPoint="0,0" EndPoint="0,1">
+        <GradientBrush.GradientStops>
+            <GradientStopCollection>
+                <GradientStop Color="#efebe9" Offset="0.0"/>
+                <GradientStop Color="#e0dfd2" Offset=".547"/>
+                <GradientStop Color="#5c5045" Offset="1"/>
+            </GradientStopCollection>
+        </GradientBrush.GradientStops>
+    </LinearGradientBrush>
+    
+    <LinearGradientBrush x:Key="PagePath2Color" StartPoint="0,0" EndPoint="0,1">
+        <GradientBrush.GradientStops>
+            <GradientStopCollection>
+                <GradientStop Color="#b5a9a5" Offset="0"/>
+                <GradientStop Color="#b3a7a3" Offset=".496"/>
+                <GradientStop Color="#aba09c" Offset=".736"/>
+                <GradientStop Color="#9e9490" Offset=".921"/>
+                <GradientStop Color="#968c88" Offset="1"/>
+            </GradientStopCollection>
+        </GradientBrush.GradientStops>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="PagePath3Color" StartPoint="0,0" EndPoint="0,1">
+        <GradientBrush.GradientStops>
+            <GradientStopCollection>
+                <GradientStop Color="#d6d5c9" Offset=".438"/>
+                <GradientStop Color="#cfcdc1" Offset=".61"/>
+                <GradientStop Color="#bcb6aa" Offset=".878"/>
+                <GradientStop Color="#b2aa9e" Offset="1"/>
+            </GradientStopCollection>
+        </GradientBrush.GradientStops>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="PagePath4Color" StartPoint="0,0" EndPoint="0,1">
+        <GradientBrush.GradientStops>
+            <GradientStopCollection>
+                <GradientStop Color="#fff" Offset=".438"/>
+                <GradientStop Color="#fcfcfa" Offset=".61"/>
+                <GradientStop Color="#f3f2ed" Offset=".878"/>
+                <GradientStop Color="#e3e2d7" Offset="1"/>
+                <GradientStop Color="#736357" Offset="1"/>
+            </GradientStopCollection>
+        </GradientBrush.GradientStops>
+    </LinearGradientBrush>
+    
 </ResourceDictionary>

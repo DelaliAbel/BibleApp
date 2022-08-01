@@ -70,6 +70,33 @@ namespace BibleApp.Lookup {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à M0 2L0 4L26 4L26 2 Z M 0 7L0 9L26 9L26 7 Z M 0 12L0 14L26 14L26 12 Z M 0 17L0 19L26 19L26 17 Z M 0 22L0 24L26 24L26 22Z.
+        /// </summary>
+        internal static string Align_justify_icon {
+            get {
+                return ResourceManager.GetString("Align_justify_icon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à M0 1L0 3L24 3L24 1 Z M 0 6L0 8L16 8L16 6 Z M 0 11L0 13L24 13L24 11 Z M 0 16L0 18L16 18L16 16 Z M 0 21L0 23L24 23L24 21Z.
+        /// </summary>
+        internal static string Align_left_icon {
+            get {
+                return ResourceManager.GetString("Align_left_icon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à M0 2L0 4L26 4L26 2 Z M 8 7L8 9L26 9L26 7 Z M 0 12L0 14L26 14L26 12 Z M 8 17L8 19L26 19L26 17 Z M 0 22L0 24L26 24L26 22Z.
+        /// </summary>
+        internal static string Align_right_icon {
+            get {
+                return ResourceManager.GetString("Align_right_icon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à M254.15,234.1V13.5c0-7.5-6-13.5-13.5-13.5s-13.5,6-13.5,13.5v220.6c-31.3,6.3-55,34-55,67.2s23.7,60.9,55,67.2v98.2
         ///			c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5v-98.2c31.3-6.3,55-34,55-67.2C309.15,268.2,285.55,240.4,254.15,234.1z M240.65,342.8
         ///			c-22.9,0-41.5-18.6-41.5-41.5s18.6-41.5,41.5-41.5s41.5,18.6,41.5,41.5S263.55,342.8,240.65,342.8z
@@ -204,6 +231,15 @@ namespace BibleApp.Lookup {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à M18.21875 0.125L17.53125 0.78125L4.03125 13.28125L4 13.28125C3.652344 13.628906 3.40625 14.136719 3.40625 14.65625C3.40625 14.917969 3.457031 15.179688 3.5625 15.40625L1 21.90625C0.898438 22.207031 0.988281 22.488281 1.1875 22.6875C1.386719 22.886719 1.792969 23 2.09375 23L8.5625 20.46875C8.824219 20.613281 9.128906 20.6875 9.4375 20.6875C9.957031 20.6875 10.464844 20.441406 10.8125 20.09375L10.84375 20.0625L23.25 6.46875L23.875 5.78125L23.21875 5.09375L18.90625 0.78125 Z M 18.15625 2.875L21.125 5.84375L13. [le reste de la chaîne a été tronqué]&quot;;.
+        /// </summary>
+        internal static string Highlight_icon {
+            get {
+                return ResourceManager.GetString("Highlight_icon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à M8.2246094 1L7.8554688 2.0800781L7.8515625 2.09375L7.8417969 2.1152344L2.40625 17.679688L1.5839844 20L30.416016 20L29.943359 18.666016L29.59375 17.679688L25.089844 4.8046875L24.833984 4.6210938C23.095769 3.36838 21.825769 2.4447394 20.083984 1.1894531L19.822266 1L8.2246094 1 z M 9.7695312 2.6621094L9.7558594 2.7050781L9.65625 3L19.177734 3C20.68328 4.0858412 21.900734 4.9719311 23.410156 6.0605469L27.585938 18L4.4121094 18L9.7148438 2.8183594L9.6777344 2.90625C9.7139884 2.827358 9.7451424 2.7454366 9.769531 [le reste de la chaîne a été tronqué]&quot;;.
         /// </summary>
         internal static string icon {
@@ -236,6 +272,15 @@ namespace BibleApp.Lookup {
         internal static string MoreVertIcon {
             get {
                 return ResourceManager.GetString("MoreVertIcon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à M4 4L4 46L35.414062 46L46 35.414062L46 35L46 4L4 4 z M 6 6L44 6L44 34L34 34L34 44L6 44L6 6 z M 14 15L14 17L37 17L37 15L14 15 z M 14 21L14 23L37 23L37 21L14 21 z M 14 27L14 29L37 29L37 27L14 27 z M 36 36L42.585938 36L36 42.585938L36 36 z.
+        /// </summary>
+        internal static string Note_icon {
+            get {
+                return ResourceManager.GetString("Note_icon", resourceCulture);
             }
         }
         
@@ -294,6 +339,24 @@ namespace BibleApp.Lookup {
         internal static string SettingIcon1 {
             get {
                 return ResourceManager.GetString("SettingIcon1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à M24,13l2.9,5.9l0.9,1.9l2.1,0.3l6.5,0.9l-4.7,4.6l-1.5,1.5l0.4,2.1l1.1,6.5l-5.8-3.1l-1.9-1l-1.9,1l-5.8,3.1l1.1-6.5l0.4-2.1l-1.5-1.5l-4.7-4.6l6.5-0.9l2.1-0.3l0.9-1.9L24,13 M24,4l-6.5,13.2L3,19.3l10.5,10.2L11,44l13-6.8L37,44l-2.5-14.5L45,19.3l-14.5-2.1L24,4L24,4z.
+        /// </summary>
+        internal static string StarBorder_icon {
+            get {
+                return ResourceManager.GetString("StarBorder_icon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à M24.913,5.186l5.478,12.288l13.378,1.413c0.861,0.091,1.207,1.158,0.564,1.737l-9.993,9.005l2.791,13.161c0.18,0.847-0.728,1.506-1.478,1.074L24,37.141l-11.653,6.722c-0.75,0.432-1.657-0.227-1.478-1.074l2.791-13.161l-9.993-9.005c-0.643-0.579-0.296-1.646,0.564-1.737l13.378-1.413l5.478-12.288C23.439,4.395,24.561,4.395,24.913,5.186z.
+        /// </summary>
+        internal static string StarFill_icon {
+            get {
+                return ResourceManager.GetString("StarFill_icon", resourceCulture);
             }
         }
         
