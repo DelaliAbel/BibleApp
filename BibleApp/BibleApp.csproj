@@ -69,7 +69,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StringData.resx</DependentUpon>
     </Compile>
+    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\Bible.cs" />
+    <Compile Include="Models\Groupes.cs" />
+    <Compile Include="Models\Livres.cs" />
+    <Compile Include="Models\Testaments.cs" />
+    <Compile Include="Models\Versets.cs" />
     <Compile Include="ViewModel\AudioViewModel.cs" />
+    <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\BibleViewModel.cs" />
     <Compile Include="ViewModel\CommandViewModel.cs" />
     <Compile Include="ViewModel\DictGHViewModel.cs" />
@@ -178,7 +185,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
+    <Folder Include="Repository\" />
+    <Folder Include="Resources\Theme\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\bible_logo.png" />

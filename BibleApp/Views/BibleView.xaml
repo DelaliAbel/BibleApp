@@ -6,22 +6,24 @@
              xmlns:local="clr-namespace:BibleApp.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+
     <Grid Background="#f7f7f7">
+        
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition/>
             <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="250"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="30"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
-
+        
         <!--#region GridSplitter-->
         <Rectangle Grid.Column="1" Grid.Row="0" Grid.RowSpan="5" Width="1" Fill="LightGray" HorizontalAlignment="Stretch" />
         <GridSplitter Grid.Column="3" Grid.Row="2" Grid.RowSpan="2" Width="4" HorizontalAlignment="Stretch" />
@@ -29,77 +31,459 @@
         <!--#endregion-->
 
         <!--#region Top menu-->
-        <!--<StackPanel Orientation="Horizontal" Background="White" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Height="60">
-
-        </StackPanel>-->
+        <DockPanel Grid.Column="2" Grid.ColumnSpan="3">
+            <Menu DockPanel.Dock="Top" FontSize="15" Background="white" VerticalAlignment="Center" >
+                <MenuItem Margin="5 0 0 0" Header="_Fichier" Background="white">
+                    <MenuItem Header="Créer une note" />
+                    <Separator />
+                    <MenuItem Header="Ouvrir une note"/>
+                    <MenuItem Header="Enregistrer"/>
+                    <MenuItem Header="A propos"/>
+                    <MenuItem Header="Quitter"/>
+                </MenuItem>
+                <MenuItem Header="_Afficher" Background="white">
+                    <MenuItem Header="Réferences" />
+                    <MenuItem Header="Versets marqués" />
+                    <MenuItem Header="Détails" />
+                    <MenuItem Header="Notes" />
+                </MenuItem>
+                <MenuItem Header="_Inserer" Background="white">
+                    <MenuItem Header="Cut" />
+                    <MenuItem Header="Copy" />
+                    <MenuItem Header="Paste" />
+                </MenuItem>
+                <MenuItem Header="_Aide" Background="white">
+                    <MenuItem Header="Cut" />
+                    <MenuItem Header="Copy" />
+                    <MenuItem Header="Paste" />
+                </MenuItem>
+            </Menu>
+        </DockPanel>
         <!--#endregion-->
 
-        <!--#region menu lattéral gauche-->        
-        <StackPanel Grid.RowSpan="5" Grid.Row="2" Background="#FAF5F5F5">
+        <!--#regionTab Top Menu-->
+        <Grid Grid.Column="2" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <!--<ColumnDefinition/>
+                <ColumnDefinition/>-->
+            </Grid.ColumnDefinitions>
+            <!--Titre-->
+            <!--<TextBlock Text="Génèse 1" Margin="15 0 0 0" Grid.Column="0" FontSize="26" DockPanel.Dock="Left" Foreground="Gray"/>-->
+            <!--Edite Buttons-->
+            <StackPanel Orientation="Horizontal" Height="15" Grid.Column="0" Margin="15 0 0 0" HorizontalAlignment="Left">
+                <Path Fill="Gray" Stretch="Uniform" Data="{StaticResource Highlight_icon}"/>
+                <Path Fill="Gray" Stretch="Uniform" Data="{StaticResource Align_left_icon}" Margin="15 0 0 0"/>
+                <Path Fill="Gray" Stretch="Uniform" Data="{StaticResource Align_justify_icon}" Margin="15 0 0 0"/>
+                <Path Fill="Gray" Stretch="Uniform" Data="{StaticResource Align_right_icon}" Margin="15 0 0 0"/>
+                <!--Action Buttons-->
+                <Path Fill="Gold" Stretch="Uniform" Height="15" Margin="15 0 0 0" Data="{StaticResource StarBorder_icon}"/>
+                <Path Fill="#629bfe" Stretch="Uniform" Height="15" Margin="15 0 0 0" Data="{StaticResource AudioIcon}"/>
+                <Path Fill="Gray" Stretch="Uniform" Height="15" Margin="15 0 0 0" Data="{StaticResource Note_icon}"/>
+                <Path Fill="Gray" Stretch="Uniform" Height="15" Margin="15 0 0 0" Data="{StaticResource TripleColumns_icon}"/>
+            </StackPanel>
+            
+            <!--<StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Path Fill="Gold" Stretch="Uniform" Height="15" Margin="0 0 10 0" Data="{StaticResource StarBorder_icon}"/>
+                <Path Fill="#629bfe" Stretch="Uniform" Height="15" Margin="0 0 30 0" Data="{StaticResource AudioIcon}"/>
+                <Path Fill="Gray" Stretch="Uniform" Height="15" Margin="0 0 30 0" Data="{StaticResource Note_icon}"/>
+            </StackPanel>-->
+        </Grid>
+        <!--#regionTab-->
+
+        <Label Content="Lire la Bible" Foreground="#535353" FontFamily="Arial" FontSize="22" Margin="20 10 10 0" FontWeight="SemiBold"/>
+
+        <!--menu lattéral gauche-->
+        <!--#region menu lattéral gauche-->
+        <StackPanel Grid.RowSpan="5" Grid.Row="2" Margin="20 20 10 0" Background="#FAF5F5F5">
             <RadioButton Content="Ancien Testament" IsChecked="True" Height="30" Style="{StaticResource LivresRadioBtn}"/>
             <RadioButton Content="Nouveau Testament" Height="30" Style="{StaticResource LivresRadioBtn}"/>
             <Separator Height="1" Background="DodgerBlue"/>
-            <StackPanel >
+            <StackPanel>
 
             </StackPanel>
         </StackPanel>
         <!--#endregion -->
         
+        <!--Double Views-->
+        <!--#region Doublbe Views-->
+        <Grid Grid.Row="2"  Grid.Column="2" Visibility="Hidden" Background="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!--Top Menu du Double view-->
+            <Grid Grid.ColumnSpan="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <!--#region Tab Top Left Menu-->
+                <Grid Grid.Column="0" Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <!--Titre-->
+                    <ComboBox Name="DoubleV1" Grid.Column="0" Margin="15 10" Width="60" HorizontalAlignment="Left"/>
+                    <TextBlock Text="Génèse 1" Margin="15 0" Grid.Column="2" HorizontalAlignment="Right" FontSize="20" Foreground="Gray"/>
+                </Grid>
+                <!--#endregion-->
+                
+                <!--#region Tab Top Right Menu-->
+                <Grid Grid.Row="0" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <!--Titre-->
+                    <ComboBox Name="DoubleV2" Grid.Column="0" Margin="15 10" Width="60" HorizontalAlignment="Left"/>
+                    <TextBlock Text="Génèse 1" Margin="15 0" Grid.Column="2" HorizontalAlignment="Right" FontSize="26" Foreground="Gray"/>
+                </Grid>
+                <!--#endregion-->
+                
+            </Grid>
+
+            <!--Contenu du Double View-->
+            <ScrollViewer Grid.Row="1" Grid.ColumnSpan="2">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <FlowDocumentReader IsScrollViewEnabled="True" ViewingMode="Scroll" IsTwoPageViewEnabled="False">
+                            <FlowDocument FontFamily="Calabri"  TextAlignment="Justify" FontSize="14" Foreground="Gray">
+                                <Paragraph>Here's a list of our users, inside our FlowDocument, in a completely interactive ListView control!</Paragraph>
+                                <Paragraph>More content can go here... Dictum varius duis at
+                             Eget sit amet tellus cras. Maecenas volutpat blandit aliquam etiam erat velit. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat.
+                             nibh tortor id aliquet lectus proin nibh nisl condimentum. Nunc non blandit massa enim nec dui. Auctor augue mauris augue neque. Vitae congue eu consequat ac felis donec et. Etiam sit amet nisl purus in mollis nunc sed id. Varius quam quisque id diam vel quam elementum. Donec massa sapien faucibus et molestie. Fermentum leo vel orci porta non. Sit amet mattis vulputate enim. In nulla posuere sollicitudin aliquam ultrices sagittis orci a. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Enim ut tellus elementum sagittis vitae et leo duis. Nunc sed augue lacus viverra vitae congue eu. Mollis nunc sed id semper. Proin nibh nisl condimentum id venenatis a condimentum vitae.
+                                </Paragraph>
+                                <Paragraph>More content can go here... Dictum varius duis at
+                             Eget sit amet tellus cras. Maecenas volutpat blandit aliquam etiam erat velit. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat.
+                             nibh tortor id aliquet lectus proin nibh nisl condimentum. Nunc non blandit massa enim nec dui. Auctor augue mauris augue neque. Vitae congue eu consequat ac felis donec et. Etiam sit amet nisl purus in mollis nunc sed id. Varius quam quisque id diam vel quam elementum. Donec massa sapien faucibus et molestie. Fermentum leo vel orci porta non. Sit amet mattis vulputate enim. In nulla posuere sollicitudin aliquam ultrices sagittis orci a. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Enim ut tellus elementum sagittis vitae et leo duis. Nunc sed augue lacus viverra vitae congue eu. Mollis nunc sed id semper. Proin nibh nisl condimentum id venenatis a condimentum vitae.
+                                </Paragraph>
+                                <Paragraph>More content can go here... Dictum varius duis at
+                             Eget sit amet tellus cras. Maecenas volutpat blandit aliquam etiam erat velit. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat.
+                             nibh tortor id aliquet lectus proin nibh nisl condimentum. Nunc non blandit massa enim nec dui. Auctor augue mauris augue neque. Vitae congue eu consequat ac felis donec et. Etiam sit amet nisl purus in mollis nunc sed id. Varius quam quisque id diam vel quam elementum. Donec massa sapien faucibus et molestie. Fermentum leo vel orci porta non. Sit amet mattis vulputate enim. In nulla posuere sollicitudin aliquam ultrices sagittis orci a. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Enim ut tellus elementum sagittis vitae et leo duis. Nunc sed augue lacus viverra vitae congue eu. Mollis nunc sed id semper. Proin nibh nisl condimentum id venenatis a condimentum vitae.
+                                </Paragraph>
+                                <Paragraph>More content can go here... Dictum varius duis at
+                             Eget sit amet tellus cras. Maecenas volutpat blandit aliquam etiam erat velit. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat.
+                             nibh tortor id aliquet lectus proin nibh nisl condimentum. Nunc non blandit massa enim nec dui. Auctor augue mauris augue neque. Vitae congue eu consequat ac felis donec et. Etiam sit amet nisl purus in mollis nunc sed id. Varius quam quisque id diam vel quam elementum. Donec massa sapien faucibus et molestie. Fermentum leo vel orci porta non. Sit amet mattis vulputate enim. In nulla posuere sollicitudin aliquam ultrices sagittis orci a. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Enim ut tellus elementum sagittis vitae et leo duis. Nunc sed augue lacus viverra vitae congue eu. Mollis nunc sed id semper. Proin nibh nisl condimentum id venenatis a condimentum vitae.
+                                </Paragraph>
+                                <Paragraph>More content can go here... Dictum varius duis at
+                             Eget sit amet tellus cras. Maecenas volutpat blandit aliquam etiam erat velit. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat.
+                             nibh tortor id aliquet lectus proin nibh nisl condimentum. Nunc non blandit massa enim nec dui. Auctor augue mauris augue neque. Vitae congue eu consequat ac felis donec et. Etiam sit amet nisl purus in mollis nunc sed id. Varius quam quisque id diam vel quam elementum. Donec massa sapien faucibus et molestie. Fermentum leo vel orci porta non. Sit amet mattis vulputate enim. In nulla posuere sollicitudin aliquam ultrices sagittis orci a. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Enim ut tellus elementum sagittis vitae et leo duis. Nunc sed augue lacus viverra vitae congue eu. Mollis nunc sed id semper. Proin nibh nisl condimentum id venenatis a condimentum vitae.
+                                </Paragraph>
+                                <Paragraph>More content can go here... Dictum varius duis at
+                             Eget sit amet tellus cras. Maecenas volutpat blandit aliquam etiam erat velit. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat.
+                             nibh tortor id aliquet lectus proin nibh nisl condimentum. Nunc non blandit massa enim nec dui. Auctor augue mauris augue neque. Vitae congue eu consequat ac felis donec et. Etiam sit amet nisl purus in mollis nunc sed id. Varius quam quisque id diam vel quam elementum. Donec massa sapien faucibus et molestie. Fermentum leo vel orci porta non. Sit amet mattis vulputate enim. In nulla posuere sollicitudin aliquam ultrices sagittis orci a. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Enim ut tellus elementum sagittis vitae et leo duis. Nunc sed augue lacus viverra vitae congue eu. Mollis nunc sed id semper. Proin nibh nisl condimentum id venenatis a condimentum vitae.
+                                </Paragraph>
+                            </FlowDocument>
+                        </FlowDocumentReader>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <FlowDocumentReader IsScrollViewEnabled="True" ViewingMode="Scroll" IsTwoPageViewEnabled="False">
+                            <FlowDocument FontFamily="Calabri"  TextAlignment="Justify" FontSize="14" Foreground="Gray">
+                                <Paragraph>Here's a list of our users, inside our FlowDocument, in a completely interactive ListView control!</Paragraph>
+                                <Paragraph>More content can go here... Dictum varius duis at
+                             Eget sit amet tellus cras. Maecenas volutpat blandit aliquam etiam erat velit. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat.
+                             nibh tortor id aliquet lectus proin nibh nisl condimentum. Nunc non blandit massa enim nec dui. Auctor augue mauris augue neque. Vitae congue eu consequat ac felis donec et. Etiam sit amet nisl purus in mollis nunc sed id. Varius quam quisque id diam vel quam elementum. Donec massa sapien faucibus et molestie. Fermentum leo vel orci porta non. Sit amet mattis vulputate enim. In nulla posuere sollicitudin aliquam ultrices sagittis orci a. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Enim ut tellus elementum sagittis vitae et leo duis. Nunc sed augue lacus viverra vitae congue eu. Mollis nunc sed id semper. Proin nibh nisl condimentum id venenatis a condimentum vitae.
+                                </Paragraph>
+                                <Paragraph>More content can go here... Dictum varius duis at
+                             Eget sit amet tellus cras. Maecenas volutpat blandit aliquam etiam erat velit. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat.
+                             nibh tortor id aliquet lectus proin nibh nisl condimentum. Nunc non blandit massa enim nec dui. Auctor augue mauris augue neque. Vitae congue eu consequat ac felis donec et. Etiam sit amet nisl purus in mollis nunc sed id. Varius quam quisque id diam vel quam elementum. Donec massa sapien faucibus et molestie. Fermentum leo vel orci porta non. Sit amet mattis vulputate enim. In nulla posuere sollicitudin aliquam ultrices sagittis orci a. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Enim ut tellus elementum sagittis vitae et leo duis. Nunc sed augue lacus viverra vitae congue eu. Mollis nunc sed id semper. Proin nibh nisl condimentum id venenatis a condimentum vitae.
+                                </Paragraph>
+                                <Paragraph>More content can go here... Dictum varius duis at
+                             Eget sit amet tellus cras. Maecenas volutpat blandit aliquam etiam erat velit. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat.
+                             nibh tortor id aliquet lectus proin nibh nisl condimentum. Nunc non blandit massa enim nec dui. Auctor augue mauris augue neque. Vitae congue eu consequat ac felis donec et. Etiam sit amet nisl purus in mollis nunc sed id. Varius quam quisque id diam vel quam elementum. Donec massa sapien faucibus et molestie. Fermentum leo vel orci porta non. Sit amet mattis vulputate enim. In nulla posuere sollicitudin aliquam ultrices sagittis orci a. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Enim ut tellus elementum sagittis vitae et leo duis. Nunc sed augue lacus viverra vitae congue eu. Mollis nunc sed id semper. Proin nibh nisl condimentum id venenatis a condimentum vitae.
+                                </Paragraph>
+                                <Paragraph>More content can go here... Dictum varius duis at
+                             Eget sit amet tellus cras. Maecenas volutpat blandit aliquam etiam erat velit. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat.
+                             nibh tortor id aliquet lectus proin nibh nisl condimentum. Nunc non blandit massa enim nec dui. Auctor augue mauris augue neque. Vitae congue eu consequat ac felis donec et. Etiam sit amet nisl purus in mollis nunc sed id. Varius quam quisque id diam vel quam elementum. Donec massa sapien faucibus et molestie. Fermentum leo vel orci porta non. Sit amet mattis vulputate enim. In nulla posuere sollicitudin aliquam ultrices sagittis orci a. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Enim ut tellus elementum sagittis vitae et leo duis. Nunc sed augue lacus viverra vitae congue eu. Mollis nunc sed id semper. Proin nibh nisl condimentum id venenatis a condimentum vitae.
+                                </Paragraph>
+                                <Paragraph>More content can go here... Dictum varius duis at
+                             Eget sit amet tellus cras. Maecenas volutpat blandit aliquam etiam erat velit. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat.
+                             nibh tortor id aliquet lectus proin nibh nisl condimentum. Nunc non blandit massa enim nec dui. Auctor augue mauris augue neque. Vitae congue eu consequat ac felis donec et. Etiam sit amet nisl purus in mollis nunc sed id. Varius quam quisque id diam vel quam elementum. Donec massa sapien faucibus et molestie. Fermentum leo vel orci porta non. Sit amet mattis vulputate enim. In nulla posuere sollicitudin aliquam ultrices sagittis orci a. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Enim ut tellus elementum sagittis vitae et leo duis. Nunc sed augue lacus viverra vitae congue eu. Mollis nunc sed id semper. Proin nibh nisl condimentum id venenatis a condimentum vitae.
+                                </Paragraph>
+                                <Paragraph>More content can go here... Dictum varius duis at
+                             Eget sit amet tellus cras. Maecenas volutpat blandit aliquam etiam erat velit. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat.
+                             nibh tortor id aliquet lectus proin nibh nisl condimentum. Nunc non blandit massa enim nec dui. Auctor augue mauris augue neque. Vitae congue eu consequat ac felis donec et. Etiam sit amet nisl purus in mollis nunc sed id. Varius quam quisque id diam vel quam elementum. Donec massa sapien faucibus et molestie. Fermentum leo vel orci porta non. Sit amet mattis vulputate enim. In nulla posuere sollicitudin aliquam ultrices sagittis orci a. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Enim ut tellus elementum sagittis vitae et leo duis. Nunc sed augue lacus viverra vitae congue eu. Mollis nunc sed id semper. Proin nibh nisl condimentum id venenatis a condimentum vitae.
+                                </Paragraph>
+                            </FlowDocument>
+                        </FlowDocumentReader>
+                    </Grid>
+                </Grid>
+            </ScrollViewer>
+        </Grid>
+        <!--#endregion-->
+        
+        <!--Triple Views-->
+        <!--#region Triple Views-->
+        <Grid Grid.Row="2" Grid.Column="2" Visibility="Visible" Background="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <!--Top Menu du Triple view-->
+            <Grid Grid.ColumnSpan="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <!--#region Tab Top Left Menu-->
+                <Grid Grid.Column="0" Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <!--Titre-->
+                    <ComboBox Name="TripleV1" Grid.Column="0" Margin="15 10" Width="60" HorizontalAlignment="Left"/>
+                    <TextBlock Text="Génèse 1" Margin="25 0" Grid.Column="2" VerticalAlignment="Center" FontSize="23" Foreground="Gray"/>
+                </Grid>
+                <!--#endregion-->
+
+                <!--#region Tab Top Center Menu-->
+                <Grid Grid.Row="0" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <!--Titre-->
+                    <ComboBox Name="tripleV2" Grid.Column="0" Margin="15 10" Width="60" HorizontalAlignment="Left"/>
+                    <TextBlock Text="Génèse 1" Margin="15 0 0 0" Grid.Column="1" FontSize="26" Foreground="Gray"/>
+                </Grid>
+                <!--#endregion-->
+
+                <!--#region Tab Top Right Menu-->
+                <Grid Grid.Row="0" Grid.Column="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <!--Titre-->
+                    <ComboBox Name="tripleV3" Grid.Column="0" Margin="15 10" Width="60" HorizontalAlignment="Left"/>
+                    <TextBlock Text="Génèse 1" Margin="15 0 0 0" Grid.Column="1" FontSize="26" Foreground="Gray"/>
+                </Grid>
+                <!--#endregion-->
+
+            </Grid>
+
+            <!--Contenu du Triple View-->
+            <ScrollViewer Grid.Row="1" Grid.ColumnSpan="3">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <FlowDocumentReader IsScrollViewEnabled="True" ViewingMode="Scroll" IsTwoPageViewEnabled="False">
+                            <FlowDocument FontFamily="Calabri"  TextAlignment="Justify" FontSize="14" Foreground="Gray">
+                                <Paragraph>Here's a list of our users, inside our FlowDocument, in a completely interactive ListView control!</Paragraph>
+                                <Paragraph>More content can go here... Dictum varius duis at
+                             Eget sit amet tellus cras. Maecenas volutpat blandit aliquam etiam erat velit. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat.
+                             nibh tortor id aliquet lectus proin nibh nisl condimentum. Nunc non blandit massa enim nec dui. Auctor augue mauris augue neque. Vitae congue eu consequat ac felis donec et. Etiam sit amet nisl purus in mollis nunc sed id. Varius quam quisque id diam vel quam elementum. Donec massa sapien faucibus et molestie. Fermentum leo vel orci porta non. Sit amet mattis vulputate enim. In nulla posuere sollicitudin aliquam ultrices sagittis orci a. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Enim ut tellus elementum sagittis vitae et leo duis. Nunc sed augue lacus viverra vitae congue eu. Mollis nunc sed id semper. Proin nibh nisl condimentum id venenatis a condimentum vitae.
+                                </Paragraph>
+                                <Paragraph>More content can go here... Dictum varius duis at
+                             Eget sit amet tellus cras. Maecenas volutpat blandit aliquam etiam erat velit. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat.
+                             nibh tortor id aliquet lectus proin nibh nisl condimentum. Nunc non blandit massa enim nec dui. Auctor augue mauris augue neque. Vitae congue eu consequat ac felis donec et. Etiam sit amet nisl purus in mollis nunc sed id. Varius quam quisque id diam vel quam elementum. Donec massa sapien faucibus et molestie. Fermentum leo vel orci porta non. Sit amet mattis vulputate enim. In nulla posuere sollicitudin aliquam ultrices sagittis orci a. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Enim ut tellus elementum sagittis vitae et leo duis. Nunc sed augue lacus viverra vitae congue eu. Mollis nunc sed id semper. Proin nibh nisl condimentum id venenatis a condimentum vitae.
+                                </Paragraph>
+                                <Paragraph>More content can go here... Dictum varius duis at
+                             Eget sit amet tellus cras. Maecenas volutpat blandit aliquam etiam erat velit. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat.
+                             nibh tortor id aliquet lectus proin nibh nisl condimentum. Nunc non blandit massa enim nec dui. Auctor augue mauris augue neque. Vitae congue eu consequat ac felis donec et. Etiam sit amet nisl purus in mollis nunc sed id. Varius quam quisque id diam vel quam elementum. Donec massa sapien faucibus et molestie. Fermentum leo vel orci porta non. Sit amet mattis vulputate enim. In nulla posuere sollicitudin aliquam ultrices sagittis orci a. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Enim ut tellus elementum sagittis vitae et leo duis. Nunc sed augue lacus viverra vitae congue eu. Mollis nunc sed id semper. Proin nibh nisl condimentum id venenatis a condimentum vitae.
+                                </Paragraph>
+                                <Paragraph>More content can go here... Dictum varius duis at
+                             Eget sit amet tellus cras. Maecenas volutpat blandit aliquam etiam erat velit. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat.
+                             nibh tortor id aliquet lectus proin nibh nisl condimentum. Nunc non blandit massa enim nec dui. Auctor augue mauris augue neque. Vitae congue eu consequat ac felis donec et. Etiam sit amet nisl purus in mollis nunc sed id. Varius quam quisque id diam vel quam elementum. Donec massa sapien faucibus et molestie. Fermentum leo vel orci porta non. Sit amet mattis vulputate enim. In nulla posuere sollicitudin aliquam ultrices sagittis orci a. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Enim ut tellus elementum sagittis vitae et leo duis. Nunc sed augue lacus viverra vitae congue eu. Mollis nunc sed id semper. Proin nibh nisl condimentum id venenatis a condimentum vitae.
+                                </Paragraph>
+                                <Paragraph>More content can go here... Dictum varius duis at
+                             Eget sit amet tellus cras. Maecenas volutpat blandit aliquam etiam erat velit. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat.
+                             nibh tortor id aliquet lectus proin nibh nisl condimentum. Nunc non blandit massa enim nec dui. Auctor augue mauris augue neque. Vitae congue eu consequat ac felis donec et. Etiam sit amet nisl purus in mollis nunc sed id. Varius quam quisque id diam vel quam elementum. Donec massa sapien faucibus et molestie. Fermentum leo vel orci porta non. Sit amet mattis vulputate enim. In nulla posuere sollicitudin aliquam ultrices sagittis orci a. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Enim ut tellus elementum sagittis vitae et leo duis. Nunc sed augue lacus viverra vitae congue eu. Mollis nunc sed id semper. Proin nibh nisl condimentum id venenatis a condimentum vitae.
+                                </Paragraph>
+                                <Paragraph>More content can go here... Dictum varius duis at
+                             Eget sit amet tellus cras. Maecenas volutpat blandit aliquam etiam erat velit. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat.
+                             nibh tortor id aliquet lectus proin nibh nisl condimentum. Nunc non blandit massa enim nec dui. Auctor augue mauris augue neque. Vitae congue eu consequat ac felis donec et. Etiam sit amet nisl purus in mollis nunc sed id. Varius quam quisque id diam vel quam elementum. Donec massa sapien faucibus et molestie. Fermentum leo vel orci porta non. Sit amet mattis vulputate enim. In nulla posuere sollicitudin aliquam ultrices sagittis orci a. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Enim ut tellus elementum sagittis vitae et leo duis. Nunc sed augue lacus viverra vitae congue eu. Mollis nunc sed id semper. Proin nibh nisl condimentum id venenatis a condimentum vitae.
+                                </Paragraph>
+                            </FlowDocument>
+                        </FlowDocumentReader>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <FlowDocumentReader IsScrollViewEnabled="True" ViewingMode="Scroll" IsTwoPageViewEnabled="False">
+                            <FlowDocument FontFamily="Calabri"  TextAlignment="Justify" FontSize="14" Foreground="Gray">
+                                <Paragraph>Here's a list of our users, inside our FlowDocument, in a completely interactive ListView control!</Paragraph>
+                                <Paragraph>More content can go here... Dictum varius duis at
+                             Eget sit amet tellus cras. Maecenas volutpat blandit aliquam etiam erat velit. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat.
+                             nibh tortor id aliquet lectus proin nibh nisl condimentum. Nunc non blandit massa enim nec dui. Auctor augue mauris augue neque. Vitae congue eu consequat ac felis donec et. Etiam sit amet nisl purus in mollis nunc sed id. Varius quam quisque id diam vel quam elementum. Donec massa sapien faucibus et molestie. Fermentum leo vel orci porta non. Sit amet mattis vulputate enim. In nulla posuere sollicitudin aliquam ultrices sagittis orci a. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Enim ut tellus elementum sagittis vitae et leo duis. Nunc sed augue lacus viverra vitae congue eu. Mollis nunc sed id semper. Proin nibh nisl condimentum id venenatis a condimentum vitae.
+                                </Paragraph>
+                                <Paragraph>More content can go here... Dictum varius duis at
+                             Eget sit amet tellus cras. Maecenas volutpat blandit aliquam etiam erat velit. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat.
+                             nibh tortor id aliquet lectus proin nibh nisl condimentum. Nunc non blandit massa enim nec dui. Auctor augue mauris augue neque. Vitae congue eu consequat ac felis donec et. Etiam sit amet nisl purus in mollis nunc sed id. Varius quam quisque id diam vel quam elementum. Donec massa sapien faucibus et molestie. Fermentum leo vel orci porta non. Sit amet mattis vulputate enim. In nulla posuere sollicitudin aliquam ultrices sagittis orci a. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Enim ut tellus elementum sagittis vitae et leo duis. Nunc sed augue lacus viverra vitae congue eu. Mollis nunc sed id semper. Proin nibh nisl condimentum id venenatis a condimentum vitae.
+                                </Paragraph>
+                                <Paragraph>More content can go here... Dictum varius duis at
+                             Eget sit amet tellus cras. Maecenas volutpat blandit aliquam etiam erat velit. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat.
+                             nibh tortor id aliquet lectus proin nibh nisl condimentum. Nunc non blandit massa enim nec dui. Auctor augue mauris augue neque. Vitae congue eu consequat ac felis donec et. Etiam sit amet nisl purus in mollis nunc sed id. Varius quam quisque id diam vel quam elementum. Donec massa sapien faucibus et molestie. Fermentum leo vel orci porta non. Sit amet mattis vulputate enim. In nulla posuere sollicitudin aliquam ultrices sagittis orci a. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Enim ut tellus elementum sagittis vitae et leo duis. Nunc sed augue lacus viverra vitae congue eu. Mollis nunc sed id semper. Proin nibh nisl condimentum id venenatis a condimentum vitae.
+                                </Paragraph>
+                                <Paragraph>More content can go here... Dictum varius duis at
+                             Eget sit amet tellus cras. Maecenas volutpat blandit aliquam etiam erat velit. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat.
+                             nibh tortor id aliquet lectus proin nibh nisl condimentum. Nunc non blandit massa enim nec dui. Auctor augue mauris augue neque. Vitae congue eu consequat ac felis donec et. Etiam sit amet nisl purus in mollis nunc sed id. Varius quam quisque id diam vel quam elementum. Donec massa sapien faucibus et molestie. Fermentum leo vel orci porta non. Sit amet mattis vulputate enim. In nulla posuere sollicitudin aliquam ultrices sagittis orci a. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Enim ut tellus elementum sagittis vitae et leo duis. Nunc sed augue lacus viverra vitae congue eu. Mollis nunc sed id semper. Proin nibh nisl condimentum id venenatis a condimentum vitae.
+                                </Paragraph>
+                                <Paragraph>More content can go here... Dictum varius duis at
+                             Eget sit amet tellus cras. Maecenas volutpat blandit aliquam etiam erat velit. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat.
+                             nibh tortor id aliquet lectus proin nibh nisl condimentum. Nunc non blandit massa enim nec dui. Auctor augue mauris augue neque. Vitae congue eu consequat ac felis donec et. Etiam sit amet nisl purus in mollis nunc sed id. Varius quam quisque id diam vel quam elementum. Donec massa sapien faucibus et molestie. Fermentum leo vel orci porta non. Sit amet mattis vulputate enim. In nulla posuere sollicitudin aliquam ultrices sagittis orci a. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Enim ut tellus elementum sagittis vitae et leo duis. Nunc sed augue lacus viverra vitae congue eu. Mollis nunc sed id semper. Proin nibh nisl condimentum id venenatis a condimentum vitae.
+                                </Paragraph>
+                                <Paragraph>More content can go here... Dictum varius duis at
+                             Eget sit amet tellus cras. Maecenas volutpat blandit aliquam etiam erat velit. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat.
+                             nibh tortor id aliquet lectus proin nibh nisl condimentum. Nunc non blandit massa enim nec dui. Auctor augue mauris augue neque. Vitae congue eu consequat ac felis donec et. Etiam sit amet nisl purus in mollis nunc sed id. Varius quam quisque id diam vel quam elementum. Donec massa sapien faucibus et molestie. Fermentum leo vel orci porta non. Sit amet mattis vulputate enim. In nulla posuere sollicitudin aliquam ultrices sagittis orci a. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Enim ut tellus elementum sagittis vitae et leo duis. Nunc sed augue lacus viverra vitae congue eu. Mollis nunc sed id semper. Proin nibh nisl condimentum id venenatis a condimentum vitae.
+                                </Paragraph>
+                            </FlowDocument>
+                        </FlowDocumentReader>
+                    </Grid>
+                    <Grid Grid.Column="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <FlowDocumentReader IsScrollViewEnabled="True" ViewingMode="Scroll" IsTwoPageViewEnabled="False">
+                            <FlowDocument FontFamily="Calabri"  TextAlignment="Justify" FontSize="14" Foreground="Gray">
+                                <Paragraph>Here's a list of our users, inside our FlowDocument, in a completely interactive ListView control!</Paragraph>
+                                <Paragraph>More content can go here... Dictum varius duis at
+                             Eget sit amet tellus cras. Maecenas volutpat blandit aliquam etiam erat velit. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat.
+                             nibh tortor id aliquet lectus proin nibh nisl condimentum. Nunc non blandit massa enim nec dui. Auctor augue mauris augue neque. Vitae congue eu consequat ac felis donec et. Etiam sit amet nisl purus in mollis nunc sed id. Varius quam quisque id diam vel quam elementum. Donec massa sapien faucibus et molestie. Fermentum leo vel orci porta non. Sit amet mattis vulputate enim. In nulla posuere sollicitudin aliquam ultrices sagittis orci a. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Enim ut tellus elementum sagittis vitae et leo duis. Nunc sed augue lacus viverra vitae congue eu. Mollis nunc sed id semper. Proin nibh nisl condimentum id venenatis a condimentum vitae.
+                                </Paragraph>
+                                <Paragraph>More content can go here... Dictum varius duis at
+                             Eget sit amet tellus cras. Maecenas volutpat blandit aliquam etiam erat velit. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat.
+                             nibh tortor id aliquet lectus proin nibh nisl condimentum. Nunc non blandit massa enim nec dui. Auctor augue mauris augue neque. Vitae congue eu consequat ac felis donec et. Etiam sit amet nisl purus in mollis nunc sed id. Varius quam quisque id diam vel quam elementum. Donec massa sapien faucibus et molestie. Fermentum leo vel orci porta non. Sit amet mattis vulputate enim. In nulla posuere sollicitudin aliquam ultrices sagittis orci a. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Enim ut tellus elementum sagittis vitae et leo duis. Nunc sed augue lacus viverra vitae congue eu. Mollis nunc sed id semper. Proin nibh nisl condimentum id venenatis a condimentum vitae.
+                                </Paragraph>
+                                <Paragraph>More content can go here... Dictum varius duis at
+                             Eget sit amet tellus cras. Maecenas volutpat blandit aliquam etiam erat velit. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat.
+                             nibh tortor id aliquet lectus proin nibh nisl condimentum. Nunc non blandit massa enim nec dui. Auctor augue mauris augue neque. Vitae congue eu consequat ac felis donec et. Etiam sit amet nisl purus in mollis nunc sed id. Varius quam quisque id diam vel quam elementum. Donec massa sapien faucibus et molestie. Fermentum leo vel orci porta non. Sit amet mattis vulputate enim. In nulla posuere sollicitudin aliquam ultrices sagittis orci a. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Enim ut tellus elementum sagittis vitae et leo duis. Nunc sed augue lacus viverra vitae congue eu. Mollis nunc sed id semper. Proin nibh nisl condimentum id venenatis a condimentum vitae.
+                                </Paragraph>
+                                <Paragraph>More content can go here... Dictum varius duis at
+                             Eget sit amet tellus cras. Maecenas volutpat blandit aliquam etiam erat velit. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat.
+                             nibh tortor id aliquet lectus proin nibh nisl condimentum. Nunc non blandit massa enim nec dui. Auctor augue mauris augue neque. Vitae congue eu consequat ac felis donec et. Etiam sit amet nisl purus in mollis nunc sed id. Varius quam quisque id diam vel quam elementum. Donec massa sapien faucibus et molestie. Fermentum leo vel orci porta non. Sit amet mattis vulputate enim. In nulla posuere sollicitudin aliquam ultrices sagittis orci a. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Enim ut tellus elementum sagittis vitae et leo duis. Nunc sed augue lacus viverra vitae congue eu. Mollis nunc sed id semper. Proin nibh nisl condimentum id venenatis a condimentum vitae.
+                                </Paragraph>
+                                <Paragraph>More content can go here... Dictum varius duis at
+                             Eget sit amet tellus cras. Maecenas volutpat blandit aliquam etiam erat velit. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat.
+                             nibh tortor id aliquet lectus proin nibh nisl condimentum. Nunc non blandit massa enim nec dui. Auctor augue mauris augue neque. Vitae congue eu consequat ac felis donec et. Etiam sit amet nisl purus in mollis nunc sed id. Varius quam quisque id diam vel quam elementum. Donec massa sapien faucibus et molestie. Fermentum leo vel orci porta non. Sit amet mattis vulputate enim. In nulla posuere sollicitudin aliquam ultrices sagittis orci a. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Enim ut tellus elementum sagittis vitae et leo duis. Nunc sed augue lacus viverra vitae congue eu. Mollis nunc sed id semper. Proin nibh nisl condimentum id venenatis a condimentum vitae.
+                                </Paragraph>
+                                <Paragraph>More content can go here... Dictum varius duis at
+                             Eget sit amet tellus cras. Maecenas volutpat blandit aliquam etiam erat velit. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat.
+                             nibh tortor id aliquet lectus proin nibh nisl condimentum. Nunc non blandit massa enim nec dui. Auctor augue mauris augue neque. Vitae congue eu consequat ac felis donec et. Etiam sit amet nisl purus in mollis nunc sed id. Varius quam quisque id diam vel quam elementum. Donec massa sapien faucibus et molestie. Fermentum leo vel orci porta non. Sit amet mattis vulputate enim. In nulla posuere sollicitudin aliquam ultrices sagittis orci a. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Enim ut tellus elementum sagittis vitae et leo duis. Nunc sed augue lacus viverra vitae congue eu. Mollis nunc sed id semper. Proin nibh nisl condimentum id venenatis a condimentum vitae.
+                                </Paragraph>
+                            </FlowDocument>
+                        </FlowDocumentReader>
+                    </Grid>
+
+                </Grid>
+            </ScrollViewer>
+        </Grid>
+        <!--#endregion-->
+
+        <!--Center TabControl-->
         <!--#region Center TabControl-->
-        <TabControl Grid.Row="2" Grid.Column="2" BorderThickness="0" Background="White">
+        <TabControl Grid.Row="2" Visibility="Hidden" Grid.Column="2" BorderThickness="0" Background="White">
             <TabControl.Resources>
-                <Style TargetType="TabItem" BasedOn="{StaticResource TabCustom}">
-                </Style>
+                <Style TargetType="TabItem" BasedOn="{StaticResource TabCustom}"/>
             </TabControl.Resources>
-            <TabItem Header="Louis Segond">
-                <Grid Margin="0 10 0 0">
-                    <StackPanel Margin="30 10" HorizontalAlignment="Right" VerticalAlignment="Top" Height="Auto">
-                        <Button Content="Ecouter" Width="60"/>
-                    </StackPanel>
-                    <FlowDocumentReader IsScrollViewEnabled="True" ViewingMode="Scroll" IsTwoPageViewEnabled="False">
-                        <FlowDocument>
-                            <Paragraph FontSize="36" Foreground="Gray" Margin="0">Genèse</Paragraph>
-                            <Paragraph FontStyle="Italic" TextAlignment="Left" FontSize="14" Foreground="Gray">Here's a list of our users, inside our FlowDocument, in a completely interactive ListView control!</Paragraph>
-                            <Paragraph FontStyle="Italic" TextAlignment="Left" FontSize="14" Foreground="Gray">More content can go here... Dictum varius duis at
+            <TabItem Header="Louis Segond" Name="Louis2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <!--<ContentControl Content="{Binding}"/>-->
+                    <FlowDocumentReader Grid.Row="1" IsScrollViewEnabled="True" ViewingMode="Scroll" IsTwoPageViewEnabled="False">
+                        <FlowDocument FontFamily="Calabri"  TextAlignment="Justify" FontSize="14" Foreground="Gray">
+                            <Paragraph>Here's a list of our users, inside our FlowDocument, in a completely interactive ListView control!</Paragraph>
+                            <Paragraph>More content can go here... Dictum varius duis at
                              Eget sit amet tellus cras. Maecenas volutpat blandit aliquam etiam erat velit. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat.
                              nibh tortor id aliquet lectus proin nibh nisl condimentum. Nunc non blandit massa enim nec dui. Auctor augue mauris augue neque. Vitae congue eu consequat ac felis donec et. Etiam sit amet nisl purus in mollis nunc sed id. Varius quam quisque id diam vel quam elementum. Donec massa sapien faucibus et molestie. Fermentum leo vel orci porta non. Sit amet mattis vulputate enim. In nulla posuere sollicitudin aliquam ultrices sagittis orci a. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Enim ut tellus elementum sagittis vitae et leo duis. Nunc sed augue lacus viverra vitae congue eu. Mollis nunc sed id semper. Proin nibh nisl condimentum id venenatis a condimentum vitae.
                             </Paragraph>
-                            <Paragraph FontStyle="Italic" TextAlignment="Left" FontSize="14" Foreground="Gray">More content can go here... Dictum varius duis at
+                            <Paragraph>More content can go here... Dictum varius duis at
                              Eget sit amet tellus cras. Maecenas volutpat blandit aliquam etiam erat velit. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat.
                              nibh tortor id aliquet lectus proin nibh nisl condimentum. Nunc non blandit massa enim nec dui. Auctor augue mauris augue neque. Vitae congue eu consequat ac felis donec et. Etiam sit amet nisl purus in mollis nunc sed id. Varius quam quisque id diam vel quam elementum. Donec massa sapien faucibus et molestie. Fermentum leo vel orci porta non. Sit amet mattis vulputate enim. In nulla posuere sollicitudin aliquam ultrices sagittis orci a. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Enim ut tellus elementum sagittis vitae et leo duis. Nunc sed augue lacus viverra vitae congue eu. Mollis nunc sed id semper. Proin nibh nisl condimentum id venenatis a condimentum vitae.
                             </Paragraph>
-                            <Paragraph FontStyle="Italic" TextAlignment="Left" FontSize="14" Foreground="Gray">More content can go here... Dictum varius duis at
+                            <Paragraph>More content can go here... Dictum varius duis at
                              Eget sit amet tellus cras. Maecenas volutpat blandit aliquam etiam erat velit. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat.
                              nibh tortor id aliquet lectus proin nibh nisl condimentum. Nunc non blandit massa enim nec dui. Auctor augue mauris augue neque. Vitae congue eu consequat ac felis donec et. Etiam sit amet nisl purus in mollis nunc sed id. Varius quam quisque id diam vel quam elementum. Donec massa sapien faucibus et molestie. Fermentum leo vel orci porta non. Sit amet mattis vulputate enim. In nulla posuere sollicitudin aliquam ultrices sagittis orci a. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Enim ut tellus elementum sagittis vitae et leo duis. Nunc sed augue lacus viverra vitae congue eu. Mollis nunc sed id semper. Proin nibh nisl condimentum id venenatis a condimentum vitae.
                             </Paragraph>
-                            <Paragraph FontStyle="Italic" TextAlignment="Left" FontSize="14" Foreground="Gray">More content can go here... Dictum varius duis at
+                            <Paragraph>More content can go here... Dictum varius duis at
                              Eget sit amet tellus cras. Maecenas volutpat blandit aliquam etiam erat velit. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat.
                              nibh tortor id aliquet lectus proin nibh nisl condimentum. Nunc non blandit massa enim nec dui. Auctor augue mauris augue neque. Vitae congue eu consequat ac felis donec et. Etiam sit amet nisl purus in mollis nunc sed id. Varius quam quisque id diam vel quam elementum. Donec massa sapien faucibus et molestie. Fermentum leo vel orci porta non. Sit amet mattis vulputate enim. In nulla posuere sollicitudin aliquam ultrices sagittis orci a. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Enim ut tellus elementum sagittis vitae et leo duis. Nunc sed augue lacus viverra vitae congue eu. Mollis nunc sed id semper. Proin nibh nisl condimentum id venenatis a condimentum vitae.
                             </Paragraph>
-                            <Paragraph FontStyle="Italic" TextAlignment="Left" FontSize="14" Foreground="Gray">More content can go here... Dictum varius duis at
+                            <Paragraph>More content can go here... Dictum varius duis at
                              Eget sit amet tellus cras. Maecenas volutpat blandit aliquam etiam erat velit. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat.
                              nibh tortor id aliquet lectus proin nibh nisl condimentum. Nunc non blandit massa enim nec dui. Auctor augue mauris augue neque. Vitae congue eu consequat ac felis donec et. Etiam sit amet nisl purus in mollis nunc sed id. Varius quam quisque id diam vel quam elementum. Donec massa sapien faucibus et molestie. Fermentum leo vel orci porta non. Sit amet mattis vulputate enim. In nulla posuere sollicitudin aliquam ultrices sagittis orci a. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Enim ut tellus elementum sagittis vitae et leo duis. Nunc sed augue lacus viverra vitae congue eu. Mollis nunc sed id semper. Proin nibh nisl condimentum id venenatis a condimentum vitae.
                             </Paragraph>
-                            <Paragraph FontStyle="Italic" TextAlignment="Left" FontSize="14" Foreground="Gray">More content can go here... Dictum varius duis at
+                            <Paragraph>More content can go here... Dictum varius duis at
                              Eget sit amet tellus cras. Maecenas volutpat blandit aliquam etiam erat velit. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat.
                              nibh tortor id aliquet lectus proin nibh nisl condimentum. Nunc non blandit massa enim nec dui. Auctor augue mauris augue neque. Vitae congue eu consequat ac felis donec et. Etiam sit amet nisl purus in mollis nunc sed id. Varius quam quisque id diam vel quam elementum. Donec massa sapien faucibus et molestie. Fermentum leo vel orci porta non. Sit amet mattis vulputate enim. In nulla posuere sollicitudin aliquam ultrices sagittis orci a. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Enim ut tellus elementum sagittis vitae et leo duis. Nunc sed augue lacus viverra vitae congue eu. Mollis nunc sed id semper. Proin nibh nisl condimentum id venenatis a condimentum vitae.
                             </Paragraph>
                         </FlowDocument>
                     </FlowDocumentReader>
-
                 </Grid>
-
             </TabItem>
-            <TabItem Header="Semeur" />
-            <TabItem Header="Segond 21" />
-            <TabItem Header="Martin" />
-            <TabItem Header="Darby" />
-            <TabItem Header="Ostervald" />
-            <TabItem Header="King James" />
-
+            <TabItem Header="Semeur"/>
+            <TabItem Header="Segond 21"/>
+            <TabItem Header="Martin"/>
+            <TabItem Header="Darby"/>
+            <TabItem Header="Ostervald"/>
+            <TabItem Header="King James"/>
         </TabControl>
         <!--#endregion-->
-        
+
+        <!--Rigth TabControl-->
         <!--#region Rigth TabControl-->
         <TabControl TabStripPlacement="Bottom" Grid.Row="2" Grid.Column="4">
             <TabItem Header="References">
@@ -109,7 +493,8 @@
             <TabItem Header="Recherche" />
         </TabControl>
         <!--#endregion-->
-        
+
+        <!--Bottom TabControl-->
         <!--#region Bottom TabControl-->
         <Grid Grid.Row="4" Grid.ColumnSpan="4" Grid.Column="2">
             <Grid.ColumnDefinitions>

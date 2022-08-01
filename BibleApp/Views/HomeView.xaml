@@ -11,17 +11,26 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         
         <!--#region Title-->
-        <Grid Margin="28 20 0 0">
-            <Label Content="Accueil" Foreground="#535353" FontFamily="Arial" FontSize="22" Margin="10 0 0 0" FontWeight="SemiBold"/>
+        <Grid Margin="20 10 10 10">
+            <Label Content="Accueil" Foreground="#535353" FontFamily="Arial" FontSize="22" Margin="0 0 0 0" FontWeight="SemiBold"/>
         </Grid>
         <!--#endregion-->
         
+        <!--#region Welcome Text-->
+        <!--<TextBlock TextWrapping="Wrap" Grid.Row="1" Margin="25 10" FontSize="16" FontFamily="Calabri">
+            <Bold>Bievenue</Bold> Vous pouvez lire un verset en particulier ou suivre une lecture chapitre après chapitre.
+            Plusieurs traductions françaises ainsi que des textes dans les langues d'origine sont proposés. Certaines versions sont très littérales tandis que d'autres favorisent une langue plus contemporaine.
+            Certaines sont annotées, ces notes parfois très fournies permettent de comprendre certains termes et pensées bibliques ainsi que la structure des livres
+        </TextBlock>-->
+        <!--#endregion-->
+        
         <!--#region Content-->
-        <Grid Margin="30 50 0 0" Grid.Row="1">
+        <Grid Margin="21 0 0 0" Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2.8*"/>
                 <ColumnDefinition Width="*"/>
@@ -33,9 +42,9 @@
             </Grid.RowDefinitions>
 
             <!--#region Image Grid-->
-            <Label Content="Illustration historique" Foreground="#535353" FontFamily="Arial" FontSize="18" Margin="10 0 0 0" FontWeight="SemiBold"/>
+            <Label Content="Illustration historique" Foreground="#535353" FontFamily="Arial" FontSize="18" FontWeight="SemiBold"/>
             <ScrollViewer Grid.Column="0" Margin="0 25 0 0" Grid.Row="0" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
-                <Grid >
+                <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="0.5*"/>

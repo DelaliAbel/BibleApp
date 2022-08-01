@@ -7,7 +7,28 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              Background="Green">
-    <Grid>
-            
+    <Grid Background="#f7f7f7">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+
+        <!--#region GridSplitter-->
+        <!--<Rectangle Grid.Column="1" Grid.Row="0" Grid.RowSpan="5" Width="1" Fill="LightGray" HorizontalAlignment="Stretch" />-->
+        <!--#endregion-->
+
+        <Label Content="Audios" Foreground="#535353" FontFamily="Arial" FontSize="22" Margin="20 10 20 0" FontWeight="SemiBold"/>
     </Grid>
+
 </UserControl>
