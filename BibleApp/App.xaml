@@ -11,30 +11,32 @@
                 <ResourceDictionary Source="Resources/Icons.xaml"/>
                 <ResourceDictionary Source="Resources/StyleResources.xaml"/>
             </ResourceDictionary.MergedDictionaries>
-
-            <!--Windows style-->
+        
+            <!--#region Theme en commentaire-->
+            
+                     <!--#Region Windows style--><!--
             <Style TargetType="Window" x:Key="WindowStyle">
                 <Style.Triggers>
 
-                    <!--Mode Black-->
+                    --><!--Mode Black--><!--
                     <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Black">
                         <Setter Property="Background" Value="Black"/>
                         <Setter Property="Foreground" Value="White"/>
                     </DataTrigger>
 
-                    <!--Mode Dark-->
+                    --><!--Mode Dark--><!--
                     <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Dark">
                         <Setter Property="Background" Value="#363C49"/>
                         <Setter Property="Foreground" Value="Teal"/>
                     </DataTrigger>
 
-                    <!--Mode Light-->
+                    --><!--Mode Light--><!--
                     <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Light">
                         <Setter Property="Background" Value="LightGray"/>
                         <Setter Property="Foreground" Value="White"/>
                     </DataTrigger>
 
-                    <!--Mode White-->
+                    --><!--Mode White--><!--
                     <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="White">
                         <Setter Property="Background" Value="White"/>
                         <Setter Property="Foreground" Value="Black"/>
@@ -42,34 +44,34 @@
 
                 </Style.Triggers>
             </Style>
+            --><!--#EndRegion-->
 
-
-            <!--Definition des styles d'un button-->
+            <!--Definition des styles d'un button--><!--
             <Style TargetType="Button">
                 <Style.Triggers>
 
-                    <!--Mode Black-->
+                    --><!--Mode Black--><!--
                     <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Black">
                         <Setter Property="Background" Value="Transparent"/>
                         <Setter Property="BorderBrush" Value="White"/>
                         <Setter Property="Foreground" Value="White"/>
                     </DataTrigger>
 
-                    <!--Mode Dark-->
+                    --><!--Mode Dark--><!--
                     <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Dark">
                         <Setter Property="Background" Value="#363C49"/>
                         <Setter Property="BorderBrush" Value="White"/>
                         <Setter Property="Foreground" Value="Teal"/>
                     </DataTrigger>
 
-                    <!--Mode Dark-->
+                    --><!--Mode Dark--><!--
                     <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Light">
                         <Setter Property="Background" Value="Teal"/>
                         <Setter Property="BorderBrush" Value="White"/>
                         <Setter Property="Foreground" Value="White"/>
                     </DataTrigger>
 
-                    <!--Mode Dark-->
+                    --><!--Mode Dark--><!--
                     <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="White">
                         <Setter Property="Background" Value="Transparent"/>
                         <Setter Property="BorderBrush" Value="Black"/>
@@ -79,32 +81,32 @@
                 </Style.Triggers>
             </Style>
 
-            <!--Definition des styles d'un textBox-->
+            --><!--Definition des styles d'un textBox--><!--
             <Style TargetType="TextBox">
                 <Style.Triggers>
 
-                    <!--Mode Black-->
+                    --><!--Mode Black--><!--
                     <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Black">
                         <Setter Property="Background" Value="Transparent"/>
                         <Setter Property="BorderBrush" Value="White"/>
                         <Setter Property="Foreground" Value="White"/>
                     </DataTrigger>
 
-                    <!--Mode Dark-->
+                    --><!--Mode Dark--><!--
                     <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Dark">
                         <Setter Property="Background" Value="#363C49"/>
                         <Setter Property="BorderBrush" Value="White"/>
                         <Setter Property="Foreground" Value="Teal"/>
                     </DataTrigger>
 
-                    <!--Mode Dark-->
+                    --><!--Mode Dark--><!--
                     <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Light">
                         <Setter Property="Background" Value="Teal"/>
                         <Setter Property="BorderBrush" Value="Teal"/>
                         <Setter Property="Foreground" Value="White"/>
                     </DataTrigger>
 
-                    <!--Mode Dark-->
+                    --><!--Mode Dark--><!--
                     <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="White">
                         <Setter Property="Background" Value="Transparent"/>
                         <Setter Property="BorderBrush" Value="Black"/>
@@ -114,32 +116,32 @@
                 </Style.Triggers>
             </Style>
 
-            <!--Definition des styles d'un GroupBox-->
+            --><!--Definition des styles d'un GroupBox--><!--
             <Style TargetType="GroupBox">
                 <Style.Triggers>
 
-                    <!--Mode Black-->
+                    --><!--Mode Black--><!--
                     <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Black">
                         <Setter Property="Background" Value="Transparent"/>
                         <Setter Property="BorderBrush" Value="White"/>
                         <Setter Property="Foreground" Value="White"/>
                     </DataTrigger>
 
-                    <!--Mode Dark-->
+                    --><!--Mode Dark--><!--
                     <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Dark">
                         <Setter Property="Background" Value="#363C49"/>
                         <Setter Property="BorderBrush" Value="White"/>
                         <Setter Property="Foreground" Value="Teal"/>
                     </DataTrigger>
 
-                    <!--Mode Dark-->
+                    --><!--Mode Dark--><!--
                     <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Light">
                         <Setter Property="Background" Value="LightGray"/>
                         <Setter Property="BorderBrush" Value="Teal"/>
                         <Setter Property="Foreground" Value="White"/>
                     </DataTrigger>
 
-                    <!--Mode Dark-->
+                    --><!--Mode Dark--><!--
                     <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="White">
                         <Setter Property="Background" Value="Transparent"/>
                         <Setter Property="BorderBrush" Value="Black"/>
@@ -149,33 +151,36 @@
                 </Style.Triggers>
             </Style>
 
-            <!--Definition des styles d'un RadioButton-->
+            --><!--Definition des styles d'un RadioButton--><!--
             <Style TargetType="RadioButton">
                 <Style.Triggers>
 
-                    <!--Mode Black-->
+                    --><!--Mode Black--><!--
                     <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Black">
                         <Setter Property="Foreground" Value="White"/>
                     </DataTrigger>
 
-                    <!--Mode Dark-->
+                    --><!--Mode Dark--><!--
                     <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Dark">
                         <Setter Property="Foreground" Value="Teal"/>
                     </DataTrigger>
 
-                    <!--Mode Dark-->
+                    --><!--Mode Dark--><!--
                     <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Light">
                         <Setter Property="Foreground" Value="White"/>
                     </DataTrigger>
 
-                    <!--Mode Dark-->
+                    --><!--Mode Dark--><!--
                     <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="White">
                         <Setter Property="Foreground" Value="Black"/>
                     </DataTrigger>
 
                 </Style.Triggers>
-            </Style>
+            </Style>-->
+            
 
+            <!--EndRegion-->
+            
         </ResourceDictionary>
     </Application.Resources>
 </Application>

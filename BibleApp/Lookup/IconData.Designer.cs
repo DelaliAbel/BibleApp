@@ -352,7 +352,6 @@ namespace BibleApp.Lookup {
         }
         
         /// <summary>
-<<<<<<< HEAD
         ///   Recherche une chaîne localisée semblable à M14 10C11.802666 10 10 11.802666 10 14L10 66C10 68.197334 11.802666 70 14 70L66 70C68.197334 70 70 68.197334 70 66L70 14C70 11.802666 68.197334 10 66 10L14 10 z M 14 12L66 12C67.116666 12 68 12.883334 68 14L68 66C68 67.116666 67.116666 68 66 68L14 68C12.883334 68 12 67.116666 12 66L12 14C12 12.883334 12.883334 12 14 12 z M 18 17 A 1 1 0 0 0 17 18 A 1 1 0 0 0 18 19 A 1 1 0 0 0 19 18 A 1 1 0 0 0 18 17 z M 22 17 A 1 1 0 0 0 21 18 A 1 1 0 0 0 22 19 A 1 1 0 0 0 23 18 A 1 1 0 0 0 22 17 z M 26 17 A 1 1 0 0 0 25 18 [le reste de la chaîne a été tronqué]&quot;;.
         /// </summary>
         internal static string SimpleColumnIcon {
@@ -362,8 +361,6 @@ namespace BibleApp.Lookup {
         }
         
         /// <summary>
-=======
->>>>>>> 30f3496340db8abab093ee1384f9889e79b55c32
         ///   Recherche une chaîne localisée semblable à M24,13l2.9,5.9l0.9,1.9l2.1,0.3l6.5,0.9l-4.7,4.6l-1.5,1.5l0.4,2.1l1.1,6.5l-5.8-3.1l-1.9-1l-1.9,1l-5.8,3.1l1.1-6.5l0.4-2.1l-1.5-1.5l-4.7-4.6l6.5-0.9l2.1-0.3l0.9-1.9L24,13 M24,4l-6.5,13.2L3,19.3l10.5,10.2L11,44l13-6.8L37,44l-2.5-14.5L45,19.3l-14.5-2.1L24,4L24,4z.
         /// </summary>
         internal static string StarBorder_icon {
