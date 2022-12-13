@@ -69,7 +69,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StringData.resx</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Models\BaseModel.cs" />
+=======
+>>>>>>> 30f3496340db8abab093ee1384f9889e79b55c32
     <Compile Include="Models\Bible.cs" />
     <Compile Include="Models\Groupes.cs" />
     <Compile Include="Models\Livres.cs" />
@@ -185,7 +188,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Folder Include="Repository\" />
+=======
+>>>>>>> 30f3496340db8abab093ee1384f9889e79b55c32
     <Folder Include="Resources\Theme\" />
   </ItemGroup>
   <ItemGroup>

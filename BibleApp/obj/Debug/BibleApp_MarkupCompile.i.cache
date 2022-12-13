@@ -12,7 +12,11 @@ DEBUG;TRACE
 C:\Users\Aifit12\Source\Repos\BibleApp_Git\BibleApp\App.xaml
 10-1142786480
 
+<<<<<<< HEAD
 30-1927364115
+=======
+28-853654672
+>>>>>>> 30f3496340db8abab093ee1384f9889e79b55c32
 13-1310406943
 MainWindow.xaml;Resources\Colors.xaml;Resources\Icons.xaml;Resources\StyleResources.xaml;Views\AudioView.xaml;Views\BibleView.xaml;Views\GrecHebreuxView.xaml;Views\HomeView.xaml;Views\PlanView.xaml;Views\SettingView.xaml;
 

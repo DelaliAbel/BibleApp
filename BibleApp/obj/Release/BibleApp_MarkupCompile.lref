@@ -1,4 +1,5 @@
 ﻿
+<<<<<<< HEAD
 FC:\Users\Aifit12\source\repos\BibleApp_Git\BibleApp\App.xaml;;
 FC:\Users\Aifit12\Source\Repos\BibleApp_Git\BibleApp\MainWindow.xaml;;
 FC:\Users\Aifit12\Source\Repos\BibleApp_Git\BibleApp\Views\AudioView.xaml;;
@@ -7,4 +8,14 @@ FC:\Users\Aifit12\Source\Repos\BibleApp_Git\BibleApp\Views\GrecHebreuxView.xaml;
 FC:\Users\Aifit12\Source\Repos\BibleApp_Git\BibleApp\Views\HomeView.xaml;;
 FC:\Users\Aifit12\Source\Repos\BibleApp_Git\BibleApp\Views\PlanView.xaml;;
 FC:\Users\Aifit12\Source\Repos\BibleApp_Git\BibleApp\Views\SettingView.xaml;;
+=======
+FC:\Users\Aifit12\Source\Repos\BibleApp_Git\BibleApp\App.xaml;;
+FC:\Users\Aifit12\source\repos\BibleApp_Git\BibleApp\MainWindow.xaml;;
+FC:\Users\Aifit12\source\repos\BibleApp_Git\BibleApp\Views\AudioView.xaml;;
+FC:\Users\Aifit12\source\repos\BibleApp_Git\BibleApp\Views\BibleView.xaml;;
+FC:\Users\Aifit12\source\repos\BibleApp_Git\BibleApp\Views\GrecHebreuxView.xaml;;
+FC:\Users\Aifit12\source\repos\BibleApp_Git\BibleApp\Views\HomeView.xaml;;
+FC:\Users\Aifit12\source\repos\BibleApp_Git\BibleApp\Views\PlanView.xaml;;
+FC:\Users\Aifit12\source\repos\BibleApp_Git\BibleApp\Views\SettingView.xaml;;
+>>>>>>> 30f3496340db8abab093ee1384f9889e79b55c32
 

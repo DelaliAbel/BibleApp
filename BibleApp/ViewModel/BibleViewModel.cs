@@ -8,5 +8,6 @@ namespace BibleApp.ViewModel
 {
     internal class BibleViewModel
     {
+
     }
 }

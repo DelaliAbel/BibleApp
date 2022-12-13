@@ -2,10 +2,16 @@
   "ExpandedNodes": [
     "",
     "\\BibleApp",
+<<<<<<< HEAD
     "\\BibleApp\\Resources",
     "\\BibleApp\\ViewModel",
     "\\BibleApp\\Views"
   ],
   "SelectedNode": "\\BibleApp\\Resources\\StyleResources.xaml",
+=======
+    "\\BibleApp\\Views"
+  ],
+  "SelectedNode": "\\BibleApp\\Views\\BibleView.xaml",
+>>>>>>> 30f3496340db8abab093ee1384f9889e79b55c32
   "PreviewInSolutionExplorer": false
 }
