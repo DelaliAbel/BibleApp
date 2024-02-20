@@ -8,7 +8,7 @@ using System.Windows.Media;
 
 namespace BibleApp.ViewModel
 {
-    internal class CommandViewModel
+    public class CommandViewModel
     {
         public string DisplayName { get; set; }
         public string Icon { get; set; }

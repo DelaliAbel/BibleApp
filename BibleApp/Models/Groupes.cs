@@ -4,12 +4,12 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 
-namespace Scraping_project
+namespace BibleApp.Models
 {
-    public class Groupes : Bible
+	public class Groupes : Bible
     {
         public string Titre { get; set; }
-        public Collection<Livres> Livre { get; set; }
+        public Collection<Livres> Livres { get; set; }
         public Groupes()
         {
 
@@ -18,7 +18,7 @@ namespace Scraping_project
         public Groupes(string titre, Collection<Livres> livre)
         {
             Titre = titre;
-            Livre = livre;
+            Livres = livre;
         }
     }
 }

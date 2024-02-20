@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Scraping_project
+namespace BibleApp.Models
 {
-    public class Versets
+	public class Versets
     {
-        public int Num { get; set; }
+        public int NumeroVerset { get; set; }
         public string Verset { get; set; }
 
         public Versets()
@@ -16,9 +16,9 @@ namespace Scraping_project
 
         }
 
-        public Versets(int num , string verset)
+        public Versets(int numeroVerset, string verset)
         {
-            Num = num;
+            NumeroVerset = numeroVerset;
             Verset = verset;
         }
     }

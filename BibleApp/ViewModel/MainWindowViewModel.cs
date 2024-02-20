@@ -1,4 +1,5 @@
-﻿using BibleApp.Command;
+﻿using BibleApp.BaseNotifyProperty;
+using BibleApp.Command;
 using BibleApp.Lookup;
 using BibleApp.Views;
 using System;
@@ -11,8 +12,8 @@ using System.Windows.Controls;
 
 namespace BibleApp.ViewModel
 {
-    internal class MainWindowViewModel : INotifyObject
-    {
+    internal class MainWindowViewModel : BaseOnPropertyChanged
+	{
         #region Fields
         private ObservableCollection<CommandViewModel> _menuBarNavigation;
         private ObservableCollection<CommandViewModel> _windowStateButton;
@@ -41,7 +42,7 @@ namespace BibleApp.ViewModel
                             DisplayName = "Accueil",
                             Icon = IconData.DashboardIcon,
                             Command = new RelayCommand(param => LoadView("home")),
-                            IsChecked = true
+                            IsChecked = false
                         },
                         //Lire la Bible
                         new CommandViewModel
@@ -49,7 +50,7 @@ namespace BibleApp.ViewModel
                             DisplayName = "Lire la Bible",
                             Icon = IconData.SymbolIcon,
                             Command = new RelayCommand(param => LoadView("bible")),
-                            IsChecked = false
+                            IsChecked = true
                         },
                         //Audio
                         new CommandViewModel
@@ -147,7 +148,7 @@ namespace BibleApp.ViewModel
         #region Construtor
         public MainWindowViewModel()
         {
-            WorkPanel = _homeView;
+            WorkPanel = _bibleView;
         }
         #endregion
 

@@ -4,21 +4,21 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 
-namespace Scraping_project
+namespace BibleApp.Models
 {
-    public class Testaments : Bible
+	public class Testaments : Bible
     {
         public string Titre { get; set; }
-        public Collection<Groupes> Groupe { get; set; }
+        public Collection<Livres> Livres { get; set; }
         public Testaments()
         {
 
         }
 
-        public Testaments(string titre, Collection<Groupes> groupe)
+        public Testaments(string titre, Collection<Livres> livres)
         {
-            Titre = titre; 
-            Groupe = groupe;   
+            Titre = titre;
+            Livres = livres;   
         }
     }
 }

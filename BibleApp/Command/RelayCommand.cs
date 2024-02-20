@@ -8,7 +8,7 @@ using System.Windows.Input;
 
 namespace BibleApp.Command
 {
-    internal class RelayCommand : ICommand
+    public class RelayCommand : ICommand
     {
         #region Fields
         readonly Action<object> _execute;

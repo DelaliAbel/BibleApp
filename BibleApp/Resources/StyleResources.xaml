@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     >
 
-    <!--#region MenuRadioBtn Style-->
+    <!--#region MenuRadioBtn Style1-->
     <Style x:Key="MenuRadioBtn" TargetType="RadioButton" >
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="GroupName"  Value="RdBtn"/>
@@ -55,6 +55,65 @@
                             <Setter TargetName="Bd" Property="Background" Value="WhiteSmoke"/>
                             <Setter Property="Foreground" Value="Black"/>
                             <Setter TargetName="Pt" Property="Fill" Value="#055efd"/>
+                            <!--<Setter TargetName="Pt" Property="Margin" Value="19 0 15 0"/>-->
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+    <!--#region MenuRadioBtn Style2-->
+    <Style x:Key="MenuRadioBtn2" TargetType="RadioButton" >
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="GroupName"  Value="RdBtn"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <Border Name="Bd" CornerRadius="0"
+                            Margin="10 0 10 0"
+                            Background="Transparent"
+                            BorderBrush="#0202f8">
+                        <Grid>
+                            <!-- Indicator -->
+                            <Ellipse Name="Indicator" HorizontalAlignment="Left" 
+                                       Width="5" Height="5" Margin="10 10 0 10"
+                                       VerticalAlignment="Center" Fill="Transparent"/>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="10"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Path Height="18" Name="Pt" Data="{Binding Tag, RelativeSource={RelativeSource AncestorType=RadioButton}}" 
+                                  Width="18"
+                                  Stretch="Uniform" 
+                                  Fill="#a0a9b2"
+                                  Margin="18 0 10 0"
+                                  HorizontalAlignment="Left"/>
+                                <ContentPresenter Grid.Column="1" 
+                                              Content="{TemplateBinding Content}" 
+                                              VerticalAlignment="Center" 
+                                              HorizontalAlignment="Left"
+                                              Margin="20 0 20 0"/>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="true">
+                            <Setter TargetName="Bd" Property="Background" Value="White"/>
+                            <Setter Property="Foreground" Value="Black"/>
+                            <Setter TargetName="Indicator" Property="Fill" Value="#055efd"/>
+                            <Setter TargetName="Indicator" Property="Height" Value="5"/>
+                            <!--<Setter TargetName="Bd" Property="BorderThickness" Value="3 0 0 0"/>-->
+                            <!--<Setter TargetName="Pt" Property="Margin" Value="17 0 15 0"/>-->
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Bd" Property="Background" Value="White"/>
+                            <Setter Property="Foreground" Value="Black"/>
                             <!--<Setter TargetName="Pt" Property="Margin" Value="19 0 15 0"/>-->
                         </Trigger>
                     </ControlTemplate.Triggers>
