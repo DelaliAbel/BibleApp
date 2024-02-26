@@ -46,7 +46,7 @@
                 <TextBlock Text="{Binding SelectedBook}" FontWeight="SemiBold" Margin="15 0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="23" Foreground="Gray"/>
                 <TextBlock Text="{Binding SelectedChapter}" FontWeight="SemiBold" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="23" Foreground="Gray" />
             </StackPanel>
-            <StackPanel Grid.Row="0" HorizontalAlignment="Center" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center" Orientation="Horizontal" Margin="36,0,0,0">
+            <StackPanel Grid.Row="0" HorizontalAlignment="Center" Grid.Column="1" Grid.ColumnSpan="3" VerticalAlignment="Center" Orientation="Horizontal" Margin="36,0,0,0">
                 <Button Style="{StaticResource BtnIcon}" Command="{Binding LessChapterCommand}" Content="{StaticResource PrevIcon}"/>
                 <ComboBox ItemsSource="{Binding ListBookChapters}" Height="20" VerticalAlignment="Center" SelectedValue="{Binding SelectedChapter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10,0" Grid.Column="1" Width="60" HorizontalAlignment="Left"/>
                 <Button Style="{StaticResource BtnIcon}" Command="{Binding AddChapterCommand}" Content="{StaticResource NextIcon}"/>
