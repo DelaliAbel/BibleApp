@@ -31,8 +31,8 @@
         <Label Content="Audios" Foreground="#535353" FontFamily="Arial" FontSize="22" Margin="20 10 20 0" FontWeight="SemiBold"/>
 
         <Grid Grid.Row="2" Grid.ColumnSpan="3">
-            <FlowDocumentReader FontFamily="Arial">
-                <FlowDocument >
+            <FlowDocumentReader ViewingMode="Scroll" FontFamily="Arial">
+                <FlowDocument>
                     <Paragraph >
                         <TextBlock>
                             <Span Background="red">

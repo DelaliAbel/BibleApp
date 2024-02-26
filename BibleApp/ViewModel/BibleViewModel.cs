@@ -114,6 +114,7 @@ namespace BibleApp.ViewModel
 				if (_pageContent == null)
 				{
 					_pageContent = new FlowDocumentReader();
+					_pageContent.ViewingMode = FlowDocumentReaderViewingMode.Scroll;
 				}
 
 				return _pageContent; 
@@ -135,7 +136,7 @@ namespace BibleApp.ViewModel
 			string lookupFolderPath = Path.Combine(baseDirectory, "..", "..", "Lookup");
 
 			// Combine the path to the data.json file
-			string bibleFullPath = Path.Combine(lookupFolderPath, "BibleLSFull2.json");
+			string bibleFullPath = Path.Combine(lookupFolderPath, "BibleLSFull3.json");
 
 			//string path = @"C:\Users\lenovo\Documents\Own\BibleFull.json"; // Your JSON data here
 			//string BibleData = File.ReadAllText(path);
@@ -211,26 +212,22 @@ namespace BibleApp.ViewModel
 				// Find the book
 				var books = BibleData.ContenuBible.FirstOrDefault(c => c.Titre == SelectedTestament).Livres.ToList();
 
-				//Get Testaments name
-				var testaments = BibleData.ContenuBible;
-				foreach (var item in testaments)
-				{
-					ListTestaments.Add(item.Titre);
-				}
+				//Get Testaments from DeserializedData
+				var localTestaments = BibleData.ContenuBible;
 
-				foreach (var item in ListTestaments)
+				//Load Testement Books and commands
+				foreach (var item in localTestaments)
 				{
 					var itemTestament = new CommandViewModel
 					{
-						DisplayName = item,
+						DisplayName = item.Titre,
 						Icon = null,
-						Command = new RelayCommand(param => LoadTestamentBooks(item)),
-						IsChecked = (item == "Ancien Testament") ? true : false,
+						Command = new RelayCommand(param => LoadTestamentBooks(item.Titre)),
+						IsChecked = (item.Titre == "Ancien Testament") ? true : false,
 					};
 
 					Testaments.Add(itemTestament);
 				}
-
 
 				//Get book chapter Numbers
 				var chapters = BibleData.ContenuBible.FirstOrDefault(c => c.Titre == SelectedTestament).Livres.FirstOrDefault(liv => liv.NomLivre == SelectedBook).ContenuChapitre;
@@ -247,7 +244,7 @@ namespace BibleApp.ViewModel
 						DisplayName = item.NomLivre,
 						Icon = null,
 						Command = new RelayCommand(param => ChangedBook(item.NomLivre)),
-						IsChecked = false,
+						IsChecked = (item.NomLivre == SelectedBook) ? true : false,
 					};
 
 					ListOfBooks.Add(itemBookMenu);
@@ -325,13 +322,13 @@ namespace BibleApp.ViewModel
 
 		public void LoadTestamentBooks(string i_testament)
 		{
-			if(i_testament == "Ancien Testament")
+			if (i_testament == "Ancien Testament")
 			{
 				SelectedBook = "Genèse";
 			}
 			else
 			{
-				SelectedBook = "Évangile selon Matthieu";
+				SelectedBook = "Matthieu";
 			}
 
 			SelectedTestament = i_testament;
@@ -349,13 +346,13 @@ namespace BibleApp.ViewModel
 			//Get All books chapter Number for the Menu
 			ListOfBooks.Clear();
 			foreach (var item in books)
-			{
+			{				
 				var itemBookMenu = new CommandViewModel
 				{
 					DisplayName = item.NomLivre,
 					Icon = null,
 					Command = new RelayCommand(param => ChangedBook(item.NomLivre)),
-					IsChecked = false,
+					IsChecked = (item.NomLivre==SelectedBook)? true : false,
 				};
 
 				ListOfBooks.Add(itemBookMenu);

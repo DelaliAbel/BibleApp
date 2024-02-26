@@ -57,23 +57,23 @@
 
                     <Border Grid.ColumnSpan="2" Margin="10" CornerRadius="15" Style="{StaticResource BorderStyle}">
                         <Border.Background>
-                            <ImageBrush ImageSource="/Images/img_1.jpg" Stretch="UniformToFill"/>
+                            <ImageBrush ImageSource="/Resources/Images/img_1.jpg" Stretch="UniformToFill"/>
                         </Border.Background>
 
                     </Border>
                     <Border Margin="10" Grid.Column="2" CornerRadius="15" Style="{StaticResource BorderStyle}">
                         <Border.Background>
-                            <ImageBrush ImageSource="/Images/img_2.jpg" Stretch="UniformToFill"/>
+                            <ImageBrush ImageSource="/Resources/Images/img_2.jpg" Stretch="UniformToFill"/>
                         </Border.Background>
                     </Border>
                     <Border Margin="10" Grid.Row="1" Grid.Column="0" CornerRadius="15" Style="{StaticResource BorderStyle}">
                         <Border.Background>
-                            <ImageBrush ImageSource="/Images/img_3.jpg" Stretch="UniformToFill"/>
+                            <ImageBrush ImageSource="/Resources/Images/img_3.jpg" Stretch="UniformToFill"/>
                         </Border.Background>
                     </Border>
                     <Border Grid.Row="1" Margin="10" Grid.Column="1" Grid.ColumnSpan="2" CornerRadius="15" Style="{StaticResource BorderStyle}">
                         <Border.Background>
-                            <ImageBrush ImageSource="/Images/img_4.jpg" Stretch="UniformToFill"/>
+                            <ImageBrush ImageSource="/Resources/Images/img_4.jpg" Stretch="UniformToFill"/>
                         </Border.Background>
                     </Border>
 

@@ -61,40 +61,11 @@ namespace BibleApp.Lookup {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {
-        ///  &quot;traduction&quot;: &quot;Louis Segond&quot;,
-        ///  &quot;contenuBible&quot;: [
-        ///    {
-        ///      &quot;titre&quot;: &quot;Ancien Testament&quot;,
-        ///      &quot;livres&quot;: [
-        ///        {
-        ///          &quot;abreviation&quot;: null,
-        ///          &quot;nomLivre&quot;: &quot;Genèse&quot;,
-        ///          &quot;contenuChapitre&quot;: [
-        ///            {
-        ///              &quot;numeroChapitre&quot;: &quot;1&quot;,
-        ///              &quot;contenuVersets&quot;: [
-        ///                {
-        ///                  &quot;numeroVerset&quot;: &quot;1&quot;,
-        ///                  &quot;verset&quot;: &quot;Ljfmlkjqsoihazrefklmj&quot;
-        ///                }
-        ///              ]
-        ///            },
-        ///            {
-        ///              &quot;num [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to 0.0.1.
         /// </summary>
-        internal static string BibleMap {
+        internal static string Version {
             get {
-                return ResourceManager.GetString("BibleMap", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Decriotn valueejl.
-        /// </summary>
-        internal static string Test {
-            get {
-                return ResourceManager.GetString("Test", resourceCulture);
+                return ResourceManager.GetString("Version", resourceCulture);
             }
         }
     }
