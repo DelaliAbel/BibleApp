@@ -4,12 +4,13 @@
              xmlns:local="clr-namespace:BibleApp"
              xmlns:properties="clr-namespace:BibleApp.Properties"
              StartupUri="SplashScreen.xaml">
+    
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Resources/Colors.xaml"/>
-                <ResourceDictionary Source="Resources/Icons.xaml"/>
-                <ResourceDictionary Source="Resources/StyleResources.xaml"/>
+                <ResourceDictionary Source="Resources/Colors/Colors.xaml"/>
+                <ResourceDictionary Source="Resources/Icons/Icons.xaml"/>
+                <ResourceDictionary Source="Resources/Styles/StyleResources.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         
             <!--#region Theme en commentaire-->

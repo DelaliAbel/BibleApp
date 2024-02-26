@@ -157,15 +157,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Resources\Colors.xaml">
+    <Page Include="Resources\Colors\Colors.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Resources\Icons.xaml">
+    <Page Include="Resources\Icons\Icons.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Resources\StyleResources.xaml">
+    <Page Include="Resources\Styles\StyleResources.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -253,9 +253,7 @@
   <ItemGroup>
     <Folder Include="Repository\" />
     <Folder Include="Resources\Fonts\" />
-    <Folder Include="Resources\Icons\" />
     <Folder Include="Resources\Strings\" />
-    <Folder Include="Resources\Styles\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\bible_logo.png" />

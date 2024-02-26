@@ -401,6 +401,8 @@ namespace BibleApp.ViewModel
                 //N'affichier le message que si l'utilisateur à cliquer depuis la fenetre About ouverte
                 if(IsAboutVisible == Visibility.Visible)
                 {
+					IsNotLoading = Visibility.Visible;
+					IsLoading = Visibility.Collapsed;
 					MessageBox.Show("Pas d'accès à internet !");
 				}
 			}
