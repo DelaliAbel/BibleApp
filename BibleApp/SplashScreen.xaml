@@ -18,7 +18,7 @@
                 <ImageBrush ImageSource="/Resources/Images/Splash.png"/>
             </Border.Background>
 
-            <Grid ShowGridLines="True">
+            <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
