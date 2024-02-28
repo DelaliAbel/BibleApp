@@ -1,0 +1,46 @@
+﻿<Window x:Class="BibleApp.SplashScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BibleApp"
+        mc:Ignorable="d"
+        Title="SplashScreen" 
+        Height="480" Width="750"
+        WindowStyle="None"
+        Background="Transparent"
+        ContentRendered="Window_ContentRendered"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True"
+        ResizeMode="NoResize" ShowInTaskbar="True" Topmost="True"
+        Icon="/Resources/Images/bible_logo.png">
+    <Grid Background="Transparent">
+        <Border CornerRadius="20" Margin="20" Effect="{StaticResource shadow}">
+            <Border.Background>
+                <ImageBrush ImageSource="/Resources/Images/Splash.png"/>
+            </Border.Background>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"  Grid.ColumnSpan="2">
+                    <TextBlock TextAlignment="Center" FontWeight="SemiBold" FontSize="13" Text="Chargement en cours..."/>
+                    <ProgressBar x:Name="progressBar" BorderThickness="0" Margin="0,10" Height="5" Foreground="blue"/>
+                    <TextBlock TextAlignment="Center" FontSize="12" Margin="0,0,0,20" Text="Version 0.0.1"/>
+                </StackPanel>
+
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
